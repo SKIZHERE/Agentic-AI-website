@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { event, site } from "../data/event";
+import ThemeToggle from "./ThemeToggle";
 import "../styles/navbar.css";
 
 export default function Navbar({ onRegister }) {
@@ -56,16 +57,20 @@ export default function Navbar({ onRegister }) {
           </li>
         </ul>
 
-        <button
-          type="button"
-          className={`navbar__toggle ${open ? "is-open" : ""}`}
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+        <div className="navbar__right">
+          <ThemeToggle />
+          <button
+            type="button"
+            className={`navbar__toggle ${open ? "is-open" : ""}`}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </div>
     </nav>
   );

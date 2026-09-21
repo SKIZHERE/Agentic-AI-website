@@ -39,36 +39,38 @@ export default function PopupNotification({ open, onClose, onRegister, onExplore
 
         <div className="popup-glow" aria-hidden="true" />
 
-        <div className="popup-top">
-          <span className="badge">
-            <span className="badge--dot" />
-            {event.badge}
-          </span>
-          <span className="popup-kicker">{event.popup.kicker}</span>
+        <div className="popup-card__scroll">
+          <div className="popup-top">
+            <span className="badge">
+              <span className="badge--dot" />
+              {event.badge}
+            </span>
+            <span className="popup-kicker">{event.popup.kicker}</span>
+          </div>
+
+          <h2 id="popup-title" className="popup-title">{event.popup.title}</h2>
+
+          <div className="popup-event" aria-hidden="true">
+            <span className="popup-event__name">{event.name}</span>
+            <span className="popup-event__year">{event.edition}</span>
+          </div>
+
+          <p
+            className="popup-body"
+            dangerouslySetInnerHTML={{ __html: event.popup.body }}
+          />
+
+          <div className="popup-actions">
+            <button type="button" className="btn btn-primary btn-lg" onClick={onRegister}>
+              {event.popup.primaryLabel}
+            </button>
+            <button type="button" className="btn btn-ghost btn-lg" onClick={onExplore}>
+              {event.popup.secondaryLabel}
+            </button>
+          </div>
+
+          <p className="popup-disclaimer muted">{event.popup.disclaimer}</p>
         </div>
-
-        <h2 id="popup-title" className="popup-title">{event.popup.title}</h2>
-
-        <div className="popup-event" aria-hidden="true">
-          <span className="popup-event__name">{event.name}</span>
-          <span className="popup-event__year">{event.edition}</span>
-        </div>
-
-        <p
-          className="popup-body"
-          dangerouslySetInnerHTML={{ __html: event.popup.body }}
-        />
-
-        <div className="popup-actions">
-          <button type="button" className="btn btn-primary btn-lg" onClick={onRegister}>
-            {event.popup.primaryLabel}
-          </button>
-          <button type="button" className="btn btn-ghost btn-lg" onClick={onExplore}>
-            {event.popup.secondaryLabel}
-          </button>
-        </div>
-
-        <p className="popup-disclaimer muted">{event.popup.disclaimer}</p>
       </div>
     </div>
   );

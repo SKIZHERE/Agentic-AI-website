@@ -11,7 +11,7 @@
 
 .navbar--scrolled {
   padding: 10px 0;
-  background: rgba(2, 4, 9, 0.62);
+  background: var(--nav-bg);
   backdrop-filter: blur(18px) saturate(140%);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   border-bottom-color: var(--line);
@@ -28,9 +28,11 @@
   display: inline-flex;
   align-items: center;
   gap: 11px;
+  min-width: 0;
 }
 
 .navbar__logo {
+  flex: 0 0 auto;
   width: 40px;
   height: 40px;
   display: grid;
@@ -46,6 +48,10 @@
   font-weight: 700;
   font-size: 17px;
   letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .navbar__year {
@@ -69,31 +75,83 @@
 }
 
 .navbar__links a:hover {
-  color: #fff;
+  color: var(--blue-bright);
 }
 
 .navbar__links-cta button {
   min-width: 118px;
 }
 
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  overflow: hidden;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.theme-toggle:hover {
+  color: var(--blue-bright);
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+}
+
+.theme-toggle__icon {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s var(--ease), opacity 0.3s var(--ease);
+}
+
+.theme-toggle__icon--moon {
+  opacity: 1;
+}
+
+.theme-toggle__icon--sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+.theme-toggle[aria-checked="true"] .theme-toggle__icon--moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+}
+
+.theme-toggle[aria-checked="true"] .theme-toggle__icon--sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
 .navbar__toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .navbar__toggle span {
   width: 18px;
   height: 2px;
   border-radius: 2px;
-  background: #cfe3ff;
+  background: var(--text);
   transition: transform 0.3s var(--ease), opacity 0.2s;
 }
 
@@ -114,14 +172,14 @@
 
   .navbar__links {
     position: fixed;
-    top: 68px;
+    top: 70px;
     left: 12px;
     right: 12px;
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
     padding: 20px;
-    background: rgba(4, 9, 20, 0.96);
+    background: var(--nav-bg-solid);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--line);
@@ -147,8 +205,8 @@
   }
 
   .navbar__links li a:hover {
-    background: rgba(59, 130, 246, 0.12);
-    color: #fff;
+    background: var(--grad-dim);
+    color: inherit;
   }
 
   .navbar__links-cta {
@@ -157,5 +215,25 @@
 
   .navbar__links-cta button {
     width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar__right {
+    gap: 6px;
+  }
+
+  .navbar__name {
+    font-size: 14.5px;
+  }
+
+  .navbar__year {
+    display: none;
+  }
+
+  .theme-toggle,
+  .navbar__toggle {
+    width: 42px;
+    height: 42px;
   }
 }

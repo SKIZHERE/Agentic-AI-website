@@ -1,25 +1,12 @@
-import { lazy, Suspense, useRef } from "react";
+import { lazy, Suspense } from "react";
 import { event, site } from "../data/event";
 import "../styles/hero.css";
 
 const Hero3D = lazy(() => import("./Hero3D"));
 
 export default function Hero({ onRegister }) {
-  const contentRef = useRef(null);
-  const reduced =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  const handleMouse = (e) => {
-    if (reduced || !contentRef.current) return;
-    const { innerWidth, innerHeight } = window;
-    const x = (e.clientX / innerWidth - 0.5) * 2;
-    const y = (e.clientY / innerHeight - 0.5) * 2;
-    contentRef.current.style.transform = `translate3d(${x * -12}px, ${y * -8}px, 0)`;
-  };
-
   return (
-    <header className="hero" id="home" onMouseMove={handleMouse}>
+    <header className="hero" id="home">
       <Suspense
         fallback={
           <div className="hero3d hero3d--pending" aria-hidden="true">
@@ -33,15 +20,38 @@ export default function Hero({ onRegister }) {
       </Suspense>
       <div className="hero-vignette" aria-hidden="true" />
 
-      <div className="hero-content" ref={contentRef}>
+      <div className="hero-content">
         <span className="badge hero-badge">
           <span className="badge--dot" />
           {event.badge} — {event.name} {event.edition}
         </span>
 
         <h1 className="hero-title">
-          Build <span className="text-gradient">autonomous AI agents</span> that
-          think, act &amp; ship.
+          Build{" "}
+          <span className="hero-word">
+            <span className="text-gradient">autonomous AI agents</span>
+            <svg
+              className="hero-underline"
+              viewBox="0 0 220 14"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M4 10c32-6 60-2 92-4s66-3 120-6"
+                stroke="url(#underline-grad)"
+                strokeWidth="4"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <defs>
+                <linearGradient id="underline-grad" x1="0" y1="0" x2="220" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#3b82f6" />
+                  <stop offset="1" stopColor="#22d3ee" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>{" "}
+          that think, act &amp; ship.
         </h1>
 
         <p className="hero-sub">{event.shortDescription}</p>

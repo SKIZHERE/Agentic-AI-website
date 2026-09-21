@@ -11,6 +11,7 @@ export default function Tracks({ id = "tracks" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
+            align="left"
             overline="Competition Tracks"
             title="Pick your lane, build your agent"
             sub="Four tracks, one rule — your agent must act on its own."
@@ -20,7 +21,7 @@ export default function Tracks({ id = "tracks" }) {
         <div className="tracks-grid">
           {event.tracks.map((t, i) => (
             <Reveal key={t.title} delay={i * 80}>
-              <div className="card track-card">
+              <div className={`card track-card ${i === 2 ? "card--elevated card--round-lg" : ""}`}>
                 <div className="track-card__icon">
                   <Icon name={t.icon} size={24} />
                 </div>

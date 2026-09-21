@@ -5,7 +5,7 @@
 }
 
 @media (max-width: 760px) {
-  .hero3d {
-    opacity: 0.75;
+  .hero3d canvas {
+    opacity: 0.72;
   }
 }

@@ -18,7 +18,7 @@
 }
 
 .about-card--accent {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.16), rgba(13, 26, 48, 0.5));
+  background: linear-gradient(180deg, var(--grad-dim), var(--panel-strong));
   border-color: var(--line-strong);
 }
 
@@ -214,9 +214,9 @@
 }
 
 .prize-card--gold {
-  background: linear-gradient(180deg, rgba(37, 99, 235, 0.28), rgba(13, 26, 48, 0.55));
+  background: linear-gradient(180deg, var(--grad-dim), var(--panel-strong));
   border-color: rgba(96, 165, 250, 0.55);
-  box-shadow: 0 0 60px -18px rgba(59, 130, 246, 0.55);
+  box-shadow: 0 0 60px -18px rgba(59, 130, 246, 0.5);
   transform: scale(1.04);
 }
 
@@ -278,7 +278,7 @@
   padding: 20px 22px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--panel-soft);
 }
 
 .rule-item p {
@@ -312,23 +312,24 @@
 .faq-item {
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--panel-soft);
   overflow: hidden;
   transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 
 .faq-item.is-open {
   border-color: var(--line-strong);
-  background: rgba(37, 61, 107, 0.18);
+  background: var(--card-hover);
 }
 
 .faq-item__head {
   width: 100%;
+  min-height: 58px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px 24px;
+  padding: 18px 24px;
   background: none;
   border: none;
   color: var(--text);
@@ -425,13 +426,13 @@
   align-items: center;
   gap: 18px;
   text-align: center;
-  background: linear-gradient(160deg, rgba(13, 26, 52, 0.7), rgba(4, 9, 20, 0.7));
+  background: var(--panel-grad);
   box-shadow: 0 0 90px -36px rgba(59, 130, 246, 0.6);
 }
 
 .register-panel__lead {
   font-size: 17px;
-  color: #dbe8ff;
+  color: var(--text);
   max-width: 420px;
 }
 
@@ -494,6 +495,10 @@
     height: 42px;
   }
 
+  .card {
+    padding: 24px 20px;
+  }
+
   .register-panel {
     padding: 36px 20px;
   }
@@ -504,5 +509,9 @@
 
   .register-panel__actions .btn {
     min-width: 100%;
+  }
+
+  .card--elevated {
+    transform: none;
   }
 }

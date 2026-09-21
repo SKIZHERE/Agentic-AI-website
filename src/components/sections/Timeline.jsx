@@ -9,9 +9,10 @@ export default function Timeline({ id = "timeline" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
+            align="left"
             overline="Roadmap"
             title="The 48-hour journey"
-            sub="From blank canvas to live demo — here's how the weekend flows."
+            sub="A rough arc — burnouts optional, shipping agents not."
           />
         </Reveal>
 

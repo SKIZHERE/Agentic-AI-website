@@ -11,9 +11,10 @@ export default function Prizes({ id = "prizes" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
+            align="left"
             overline="Prizes & Perks"
             title="What's on the line"
-            sub="Beyond the cash — mentorship, incubation and interviews."
+            sub="Cash, cloud credits, interviews — and a trophy that survives the keynote."
           />
         </Reveal>
 

@@ -9,7 +9,7 @@ export const event = {
   popup: {
     kicker: "You're invited, builder",
     title: "Agentic AI Hackathon 2026 is LIVE",
-    body: "48 hours. Real problems. Autonomous agents that think, plan and act on their own. Team up, build and ship — and win from a prize pool of &#8377;5,00,000.",
+    body: "48 hours. One goal: agents that think, plan and act on their own. Team up, ship, and win from a &#8377;5,00,000 prize pool.",
     primaryLabel: "Register Now",
     secondaryLabel: "Explore More",
     disclaimer: "Free to participate · Open to all students & developers",
@@ -100,7 +100,7 @@ export const event = {
   ],
 
   register: {
-    note: "Registration closes 24 hours before kickoff. Slots are limited per track.",
+    note: "Slots are capped per track. Registration closes 24 hours before kickoff — don't snooze.",
   },
 
   organizer: "Organised by Agentic AI Community",
@@ -129,5 +129,5 @@ export const site = {
     email: "hello@agenticai.events",
   },
   footerNote:
-    "Built with agents, for agents. No login required — this page is purely an information hub.",
+    "Made with agents, for agents. No login, no paywall — this page exists purely so you can decide to ship or sit this one out.",
 };

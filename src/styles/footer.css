@@ -1,7 +1,7 @@
 .footer {
   position: relative;
   border-top: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--bg), #01040a);
+  background: linear-gradient(180deg, var(--bg), var(--bg-deep));
   padding: 56px 0 34px;
 }
 

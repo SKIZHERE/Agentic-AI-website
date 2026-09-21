@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import ParticleField from "./components/ParticleField";
 import PopupNotification from "./components/PopupNotification";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -12,38 +13,27 @@ import FAQ from "./components/sections/FAQ";
 import Register from "./components/sections/Register";
 import Footer from "./components/Footer";
 
-const STORAGE_KEY = "agentic-hackathon-notice-dismissed";
-
 export default function App() {
   const [noticeOpen, setNoticeOpen] = useState(false);
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem(STORAGE_KEY);
-    if (dismissed !== "1") {
-      const t = setTimeout(() => setNoticeOpen(true), 600);
-      return () => clearTimeout(t);
-    }
-    return undefined;
+    const t = setTimeout(() => setNoticeOpen(true), 500);
+    return () => clearTimeout(t);
   }, []);
 
   const dismissNotice = useCallback(() => {
-    sessionStorage.setItem(STORAGE_KEY, "1");
     setNoticeOpen(false);
   }, []);
 
-  const scrollTo = useCallback((id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  const closeAndScroll = useCallback((id) => {
+    setNoticeOpen(false);
+    window.setTimeout(() => {
+      document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+    }, 80);
   }, []);
 
-  const handleRegister = useCallback(() => {
-    dismissNotice();
-    scrollTo("#register");
-  }, [dismissNotice, scrollTo]);
-
-  const handleExplore = useCallback(() => {
-    dismissNotice();
-    scrollTo("#about");
-  }, [dismissNotice, scrollTo]);
+  const handleRegister = useCallback(() => closeAndScroll("#register"), [closeAndScroll]);
+  const handleExplore = useCallback(() => closeAndScroll("#about"), [closeAndScroll]);
 
   return (
     <>
@@ -53,19 +43,23 @@ export default function App() {
         onRegister={handleRegister}
         onExplore={handleExplore}
       />
-      <Navbar onRegister={handleRegister} />
-      <main>
-        <Hero onRegister={handleRegister} />
-        <About />
-        <Details />
-        <Tracks />
-        <Timeline />
-        <Prizes />
-        <Rules />
-        <FAQ />
-        <Register />
-      </main>
-      <Footer />
+      <ParticleField />
+      <div className="site-root">
+        <Navbar onRegister={handleRegister} />
+        <main>
+          <Hero onRegister={handleRegister} />
+          <About />
+          <Details />
+          <Tracks />
+          <Timeline />
+          <Prizes />
+          <Rules />
+          <FAQ />
+          <Register />
+        </main>
+        <Footer />
+      </div>
+      <div className="noise-overlay" aria-hidden="true" />
     </>
   );
 }

@@ -10,6 +10,7 @@ export default function Details({ id = "details" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
+            align="left"
             overline="Event Details"
             title="When & where the magic happens"
             sub="Everything you need to plan your weekend around the build."

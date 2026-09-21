@@ -7,6 +7,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
+  overflow-x: clip;
 }
 
 body {
@@ -14,13 +15,13 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
   background: rgba(59, 130, 246, 0.4);
-  color: #fff;
+  color: var(--text);
 }
 
 ::-webkit-scrollbar {
@@ -30,7 +31,7 @@ body {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(#1e3a8a, #0a1424);
+  background: var(--scroll-thumb);
   border-radius: 999px;
   border: 2px solid var(--bg);
 }
@@ -89,7 +90,7 @@ canvas {
   font-size: clamp(30px, 4.4vw, 46px);
   letter-spacing: -0.02em;
   margin: 14px 0 12px;
-  background: linear-gradient(180deg, #fff, #9cc3ff);
+  background: var(--title-grad);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -113,7 +114,7 @@ canvas {
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #bcd7ff;
+  color: var(--blue-dim);
   white-space: nowrap;
 }
 
@@ -153,7 +154,7 @@ canvas {
 
 .btn-primary {
   background: var(--grad);
-  color: #03101f;
+  color: var(--on-accent);
   box-shadow: 0 12px 34px -10px rgba(59, 130, 246, 0.65);
 }
 
@@ -163,14 +164,14 @@ canvas {
 }
 
 .btn-ghost {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--panel);
   border-color: var(--line);
   color: var(--text);
 }
 
 .btn-ghost:hover {
   border-color: var(--line-strong);
-  background: rgba(59, 130, 246, 0.1);
+  background: var(--grad-dim);
   transform: translateY(-3px);
 }
 
@@ -204,7 +205,19 @@ canvas {
 .card:hover {
   transform: translateY(-6px);
   border-color: var(--line-strong);
-  background: rgba(37, 61, 107, 0.22);
+  background: var(--card-hover);
+}
+
+.card--round-lg {
+  border-radius: 26px;
+}
+
+.card--elevated {
+  transform: translateY(8px) rotate(1.1deg);
+}
+
+.card--elevated:hover {
+  transform: translateY(3px) rotate(0deg);
 }
 
 .text-gradient {
@@ -223,8 +236,8 @@ canvas {
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(96, 165, 250, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(96, 165, 250, 0.07) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 58px 58px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 20%, transparent 75%);
@@ -253,6 +266,37 @@ canvas {
 
 .section-heading .section-sub {
   margin-inline: auto;
+}
+
+.section-heading--left {
+  text-align: left;
+}
+
+.section-heading--left .overline {
+  justify-content: flex-start;
+}
+
+.section-heading--left .section-title,
+.section-heading--left .section-sub {
+  margin-inline: 0;
+}
+
+/* site root sits above the visual particle layer */
+.site-root {
+  position: relative;
+  z-index: 1;
+}
+
+/* film-grain texture over everything — kills the flat template look */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  pointer-events: none;
+  opacity: var(--grain-alpha);
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 /* scroll reveal */
