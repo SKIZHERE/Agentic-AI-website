@@ -54,8 +54,6 @@ export default function Hero({ onRegister }) {
           that think, act &amp; ship.
         </h1>
 
-        <p className="hero-sub">{event.shortDescription}</p>
-
         <div className="hero-cta">
           <button type="button" className="btn btn-primary btn-lg" onClick={onRegister}>
             Register Now

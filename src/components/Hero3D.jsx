@@ -12,12 +12,12 @@ const IS_MOBILE =
   typeof window !== "undefined" && window.innerWidth <= 760;
 
 const SCENE_SETTINGS = IS_MOBILE
-  ? { pos: [0, 0.35, -2.6], scale: 0.7 }
-  : { pos: [0, 0.15, -0.6], scale: 1.05 };
+  ? { pos: [0, 0.3, -2.4], scale: 0.5 }
+  : { pos: [0, 0.1, -0.6], scale: 1.2 };
 
-const CAMERA_Z = IS_MOBILE ? 9.2 : 7;
+const CAMERA_Z = IS_MOBILE ? 11 : 7;
 
-const STAR_COUNT = IS_MOBILE ? 650 : 1400;
+const STAR_COUNT = IS_MOBILE ? 400 : 750;
 
 function Starfield() {
   const ref = useRef();
@@ -42,10 +42,10 @@ function Starfield() {
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.026}
+        size={0.02}
         color="#5ea7ff"
         transparent
-        opacity={0.6}
+        opacity={0.45}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -92,18 +92,18 @@ function buildHubLinks(nodes) {
 }
 
 const ORBITERS = [
-  { rx: 2.45, ry: 1.4, rz: 1.1, speed: 0.5, phase: 0.6, size: 0.1, color: "#60a5fa", kind: "sphere" },
-  { rx: 2.9, ry: 1.8, rz: 1.5, speed: -0.42, phase: 2.1, size: 0.08, color: "#22d3ee", kind: "octa" },
-  { rx: 3.25, ry: 1.2, rz: 1.9, speed: 0.34, phase: 4.0, size: 0.11, color: "#93c5fd", kind: "sphere" },
-  { rx: 2.3, ry: 2.0, rz: 1.0, speed: 0.58, phase: 1.3, size: 0.07, color: "#3b82f6", kind: "sphere" },
-  { rx: 3.5, ry: 1.5, rz: 2.2, speed: -0.3, phase: 3.2, size: 0.09, color: "#38bdf8", kind: "octa" },
-  { rx: 2.68, ry: 1.1, rz: 1.4, speed: 0.52, phase: 5.12, size: 0.08, color: "#7cc0ff", kind: "sphere" },
+  { rx: 3.9, ry: 2.4, rz: 2.4, speed: 0.5, phase: 0.6, size: 0.03, color: "#60a5fa", kind: "sphere" },
+  { rx: 4.8, ry: 3.0, rz: 3.6, speed: -0.42, phase: 2.1, size: 0.025, color: "#22d3ee", kind: "sphere" },
+  { rx: 5.7, ry: 2.1, rz: 4.5, speed: 0.34, phase: 4.0, size: 0.032, color: "#93c5fd", kind: "sphere" },
+  { rx: 3.6, ry: 3.3, rz: 2.1, speed: 0.58, phase: 1.3, size: 0.024, color: "#3b82f6", kind: "sphere" },
+  { rx: 6.0, ry: 2.55, rz: 5.1, speed: -0.3, phase: 3.2, size: 0.027, color: "#38bdf8", kind: "sphere" },
+  { rx: 4.35, ry: 1.95, rz: 3.0, speed: 0.52, phase: 5.12, size: 0.025, color: "#7cc0ff", kind: "sphere" },
 ];
 
 const DUST_RINGS = [
-  { radius: 2.2, tilt: 0.35, count: 44, speed: 0.22, phase: 0.3, color: "#7cc0ff" },
-  { radius: 2.95, tilt: -0.5, count: 34, speed: -0.16, phase: 1.9, color: "#4d8dff" },
-  { radius: 3.4, tilt: 1.2, count: 26, speed: 0.26, phase: 0.8, color: "#9fd8ff" },
+  { radius: 3.75, tilt: 0.35, count: 24, speed: 0.2, phase: 0.3, color: "#7cc0ff" },
+  { radius: 4.8, tilt: -0.5, count: 16, speed: -0.14, phase: 1.9, color: "#4d8dff" },
+  { radius: 5.78, tilt: 1.2, count: 12, speed: 0.22, phase: 0.8, color: "#9fd8ff" },
 ];
 
 const DUST_TOTAL = DUST_RINGS.reduce((sum, r) => sum + r.count, 0);
@@ -161,10 +161,10 @@ function OrbitDust() {
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={IS_MOBILE ? 0.038 : 0.05}
+        size={IS_MOBILE ? 0.026 : 0.035}
         color="#8cc3ff"
         transparent
-        opacity={0.72}
+        opacity={0.5}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -210,8 +210,8 @@ function Constellation() {
 
   const STALL_MS = 2000;
   const AUTO_REVOLVE_SPEED = 0.24;
-  const MOUSE_YAW = 1.1;
-  const PITCH_RANGE = 0.24;
+  const MOUSE_YAW = 1.6;
+  const PITCH_RANGE = 0.4;
 
   useEffect(() => {
     if (REDUCED) return undefined;
@@ -282,7 +282,7 @@ function Constellation() {
       <pointLight position={[0, 0.5, 1.4]} intensity={18} color="#3b82f6" />
 
       <mesh>
-        <sphereGeometry args={[0.14, 24, 24]} />
+        <sphereGeometry args={[0.065, 18, 18]} />
         <meshStandardMaterial
           color="#eaf4ff"
           emissive="#8fc1ff"
@@ -294,7 +294,7 @@ function Constellation() {
 
       {hubNodes.map((p, i) => (
         <mesh key={i} position={p}>
-          <sphereGeometry args={[0.07 + (i % 3) * 0.02, 16, 16]} />
+          <sphereGeometry args={[0.03 + (i % 3) * 0.008, 12, 12]} />
           <meshStandardMaterial
             color="#7fb0ff"
             emissive="#3b82f6"
@@ -312,7 +312,7 @@ function Constellation() {
         <lineBasicMaterial
           color="#4d8dff"
           transparent
-          opacity={0.34}
+          opacity={0.26}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
@@ -325,7 +325,7 @@ function Constellation() {
         <lineBasicMaterial
           color="#38bdf8"
           transparent
-          opacity={0.5}
+          opacity={0.38}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
         />
@@ -351,9 +351,11 @@ function Constellation() {
             <meshStandardMaterial
               color={o.color}
               emissive={o.color}
-              emissiveIntensity={1.7}
-              metalness={0.5}
-              roughness={0.25}
+              emissiveIntensity={1.35}
+              transparent
+              opacity={0.8}
+              metalness={0.4}
+              roughness={0.3}
             />
           </mesh>
         );
@@ -371,7 +373,7 @@ function SceneContent() {
       <directionalLight position={[-5, 3, -4]} intensity={1.6} color="#22d3ee" />
       <Constellation />
       <Starfield />
-      <Sparkles count={IS_MOBILE ? 40 : 90} scale={[15, 8.5, 9]} size={2.2} speed={0.28} color="#7cc0ff" />
+      <Sparkles count={IS_MOBILE ? 20 : 45} scale={[15, 8.5, 9]} size={1.5} speed={0.24} color="#7cc0ff" opacity={0.6} />
     </group>
   );
 }
