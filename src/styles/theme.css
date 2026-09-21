@@ -1,0 +1,25 @@
+:root {
+  --bg: #020409;
+  --bg-2: #050c18;
+  --bg-3: #0a1424;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-strong: rgba(13, 26, 48, 0.72);
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(96, 165, 250, 0.35);
+  --text: #f2f6fc;
+  --muted: #8fa3bd;
+  --muted-2: #61748f;
+  --blue: #3b82f6;
+  --blue-bright: #22d3ee;
+  --blue-deep: #1e3a8a;
+  --blue-dim: #2563eb;
+  --grad: linear-gradient(135deg, #3b82f6 0%, #22d3ee 100%);
+  --grad-dim: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(34, 211, 238, 0.12));
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 24px 60px -20px rgba(2, 6, 23, 0.9);
+  --font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

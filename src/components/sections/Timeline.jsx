@@ -1,0 +1,39 @@
+import Reveal from "../ui/Reveal";
+import SectionHeading from "../ui/SectionHeading";
+import { event } from "../../data/event";
+import "../section.css";
+
+export default function Timeline({ id = "timeline" }) {
+  return (
+    <section className="section timeline" id={id}>
+      <div className="container">
+        <Reveal>
+          <SectionHeading
+            overline="Roadmap"
+            title="The 48-hour journey"
+            sub="From blank canvas to live demo — here's how the weekend flows."
+          />
+        </Reveal>
+
+        <div className="timeline-list">
+          {event.timeline.map((t, i) => (
+            <Reveal key={t.title} delay={i * 90}>
+              <div className="timeline-item">
+                <div className="timeline-item__rail">
+                  <span className="timeline-item__node">{i + 1}</span>
+                  {i < event.timeline.length - 1 && <span className="timeline-item__line" />}
+                </div>
+                <div className="card timeline-item__card">
+                  <span className="timeline-item__phase text-gradient">{t.phase}</span>
+                  <h3 className="timeline-item__title">{t.title}</h3>
+                  <span className="timeline-item__date">{t.date}</span>
+                  <p className="timeline-item__desc muted">{t.desc}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

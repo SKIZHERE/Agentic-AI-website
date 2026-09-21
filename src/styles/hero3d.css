@@ -1,0 +1,11 @@
+.hero3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  .hero3d {
+    opacity: 0.75;
+  }
+}

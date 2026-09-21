@@ -1,0 +1,72 @@
+.footer {
+  position: relative;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--bg), #01040a);
+  padding: 56px 0 34px;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  text-align: center;
+  align-items: center;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer__logo {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--grad-dim);
+  border: 1px solid var(--line-strong);
+}
+
+.footer__name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.footer__year {
+  color: var(--blue-bright);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.footer__organizer {
+  font-size: 13px;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 26px;
+}
+
+.footer__links a {
+  color: var(--muted);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer__links a:hover {
+  color: var(--blue-bright);
+}
+
+.footer__note {
+  font-size: 13px;
+  max-width: 520px;
+}
+
+.footer__copy {
+  font-size: 12.5px;
+}
