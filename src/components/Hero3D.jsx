@@ -12,8 +12,8 @@ const IS_MOBILE =
   typeof window !== "undefined" && window.innerWidth <= 760;
 
 const SCENE_SETTINGS = IS_MOBILE
-  ? { pos: [0, 0.4, -2.4], scale: 0.55 }
-  : { pos: [2.35, 0.1, -0.6], scale: 0.92 };
+  ? { pos: [0, 0.35, -2.6], scale: 0.7 }
+  : { pos: [0, 0.15, -0.6], scale: 1.05 };
 
 const CAMERA_Z = IS_MOBILE ? 9.2 : 7;
 
@@ -203,18 +203,28 @@ function Constellation() {
   const linksGeom = useRef();
 
   const pointer = useRef({ x: 0, y: 0 });
+  const yaw = useRef(0);
+  const pitch = useRef(0);
+  const yawTarget = useRef(0);
+  const lastActivity = useRef(0);
+
+  const STALL_MS = 2000;
+  const AUTO_REVOLVE_SPEED = 0.24;
+  const MOUSE_YAW = 1.1;
+  const PITCH_RANGE = 0.24;
 
   useEffect(() => {
     if (REDUCED) return undefined;
     const onMove = (e) => {
       pointer.current.x = (e.clientX / window.innerWidth) * 2 - 1;
       pointer.current.y = -((e.clientY / window.innerHeight) * 2 - 1);
+      lastActivity.current = performance.now();
     };
     window.addEventListener("mousemove", onMove, { passive: true });
     return () => window.removeEventListener("mousemove", onMove);
   }, []);
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     const g = groupRef.current;
     if (!g) return;
 
@@ -224,10 +234,30 @@ function Constellation() {
       return;
     }
 
-    const t = state.clock.elapsedTime;
-    g.rotation.y = THREE.MathUtils.lerp(g.rotation.y, pointer.current.x * 0.34 + Math.sin(t * 0.1) * 0.08, 0.05);
-    g.rotation.x = THREE.MathUtils.lerp(g.rotation.x, -pointer.current.y * 0.22, 0.05);
+    const d = Math.min(delta, 0.05);
+    const active = performance.now() - lastActivity.current < STALL_MS;
 
+    if (active) {
+      yawTarget.current = THREE.MathUtils.clamp(pointer.current.x, -1, 1) * MOUSE_YAW;
+      const pitchTarget = -pointer.current.y * PITCH_RANGE;
+      const pk = 1 - Math.exp(-d * 2.2);
+      pitch.current += (pitchTarget - pitch.current) * pk;
+    } else {
+      yawTarget.current += AUTO_REVOLVE_SPEED * d;
+      const pk = 1 - Math.exp(-d * 1.6);
+      pitch.current += (0 - pitch.current) * pk;
+    }
+
+    let diff = yawTarget.current - yaw.current;
+    if (diff > Math.PI) diff -= Math.PI * 2;
+    if (diff < -Math.PI) diff += Math.PI * 2;
+    const yk = active ? 1 - Math.exp(-d * 3.4) : 1 - Math.exp(-d * 2.2);
+    yaw.current += diff * yk;
+
+    g.rotation.y = yaw.current;
+    g.rotation.x = pitch.current;
+
+    const t = state.clock.elapsedTime;
     const arr = linkPositions;
     ORBITERS.forEach((o, i) => {
       const p = orbitPosition(o, t);

@@ -29,7 +29,7 @@ export default function Hero({ onRegister }) {
         <h1 className="hero-title">
           Build{" "}
           <span className="hero-word">
-            <span className="text-gradient">autonomous AI agents</span>
+              <span className="text-gradient">autonomous AI agents</span>
             <svg
               className="hero-underline"
               viewBox="0 0 220 14"
