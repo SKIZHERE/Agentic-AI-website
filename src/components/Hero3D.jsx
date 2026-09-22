@@ -1,6 +1,6 @@
 import { Component, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Sparkles } from "@react-three/drei";
+import { Float, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 import "../styles/hero3d.css";
 
@@ -17,23 +17,23 @@ const SCENE_SETTINGS = IS_MOBILE
 
 const CAMERA_Z = IS_MOBILE ? 11 : 7;
 
-const STAR_COUNT = IS_MOBILE ? 400 : 750;
+const STAR_COUNT = IS_MOBILE ? 200 : 700;
 
 function Starfield() {
   const ref = useRef();
   const [positions] = useState(() => {
     const arr = new Float32Array(STAR_COUNT * 3);
     for (let i = 0; i < STAR_COUNT; i += 1) {
-      arr[i * 3] = (Math.random() - 0.5) * 30;
-      arr[i * 3 + 1] = (Math.random() - 0.5) * 18;
-      arr[i * 3 + 2] = (Math.random() - 0.5) * 16 - 4;
+      arr[i * 3] = (Math.random() - 0.5) * 18;
+      arr[i * 3 + 1] = (Math.random() - 0.5) * 12;
+      arr[i * 3 + 2] = (Math.random() - 0.5) * 12 - 3;
     }
     return arr;
   });
 
   useFrame((state, delta) => {
     if (REDUCED) return;
-    ref.current.rotation.y += delta * 0.012;
+    ref.current.rotation.y += delta * 0.018;
   });
 
   return (
@@ -42,10 +42,10 @@ function Starfield() {
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial
-        size={0.02}
+        size={0.028}
         color="#5ea7ff"
         transparent
-        opacity={0.45}
+        opacity={0.75}
         sizeAttenuation
         depthWrite={false}
         blending={THREE.AdditiveBlending}
@@ -54,25 +54,64 @@ function Starfield() {
   );
 }
 
-function HolographicGlobe() {
-  const groupRef = useRef();
-  const shellRef = useRef();
-  const coreRef = useRef();
+function Core() {
+  const knot = useRef();
+  const shell = useRef();
 
-  const gridGeometry = useMemo(() => new THREE.IcosahedronGeometry(1.9, 1), []);
-  const innerGeometry = useMemo(() => new THREE.OctahedronGeometry(1.35, 0), []);
-  const glowGeometry = useMemo(() => new THREE.SphereGeometry(1.72, 32, 24), []);
+  useFrame((state) => {
+    if (REDUCED) {
+      knot.current.rotation.y = 0.6;
+      return;
+    }
+    const t = state.clock.elapsedTime;
+    knot.current.rotation.y = t * 0.35 + state.pointer.x * 0.55;
+    knot.current.rotation.x = Math.sin(t * 0.2) * 0.18 + state.pointer.y * 0.28;
+    shell.current.rotation.y = -t * 0.14;
+    shell.current.rotation.z = t * 0.07;
+  });
 
+  return (
+    <group>
+      <mesh ref={shell}>
+        <icosahedronGeometry args={[2.35, 1]} />
+        <meshBasicMaterial color="#2563eb" wireframe transparent opacity={0.22} />
+      </mesh>
+      <mesh ref={knot}>
+        <torusKnotGeometry args={[1.15, 0.34, 220, 36]} />
+        <meshStandardMaterial
+          color="#1d4ed8"
+          emissive="#2e6bff"
+          emissiveIntensity={0.42}
+          metalness={0.72}
+          roughness={0.22}
+          wireframe
+        />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[0.16, 24, 24]} />
+        <meshStandardMaterial
+          color="#bfe4ff"
+          emissive="#9fdbff"
+          emissiveIntensity={2.2}
+          metalness={0.3}
+          roughness={0.2}
+        />
+      </mesh>
+    </group>
+  );
+}
+
+
+function SceneContent() {
+  const group = useRef();
   const pointer = useRef({ x: 0, y: 0 });
   const yaw = useRef(0);
   const pitch = useRef(0);
-  const yawTarget = useRef(0);
+  const accumYaw = useRef(0);
   const lastActivity = useRef(0);
 
-  const STALL_MS = 2000;
+  const STALL_MS = 1500;
   const AUTO_SPEED = 0.16;
-  const MOUSE_YAW = 0.6;
-  const PITCH_RANGE = 0.2;
 
   useEffect(() => {
     if (REDUCED) return undefined;
@@ -86,124 +125,40 @@ function HolographicGlobe() {
   }, []);
 
   useFrame((state, delta) => {
-    const g = groupRef.current;
+    if (REDUCED) return;
+    const g = group.current;
     if (!g) return;
-
-    if (REDUCED) {
-      g.rotation.y = -0.3;
-      g.rotation.x = 0.1;
-      g.rotation.z = 0.12;
-      return;
-    }
-
+    
     const d = Math.min(delta, 0.05);
-    const t = state.clock.elapsedTime;
     const active = performance.now() - lastActivity.current < STALL_MS;
 
-    if (active) {
-      yawTarget.current = THREE.MathUtils.clamp(pointer.current.x, -1, 1) * MOUSE_YAW;
-      const pitchTarget = -pointer.current.y * PITCH_RANGE;
-      const pk = 1 - Math.exp(-d * 2.2);
-      pitch.current += (pitchTarget - pitch.current) * pk;
-    } else {
-      yawTarget.current += AUTO_SPEED * d;
-      const pk = 1 - Math.exp(-d * 1.6);
-      pitch.current += (0 - pitch.current) * pk;
+    if (!active) {
+      accumYaw.current += AUTO_SPEED * d;
     }
 
-    let diff = yawTarget.current - yaw.current;
-    if (diff > Math.PI) diff -= Math.PI * 2;
-    if (diff < -Math.PI) diff += Math.PI * 2;
+    const yawTarget = accumYaw.current + pointer.current.x * 0.3;
+    const pitchTarget = active ? -pointer.current.y * 0.2 : 0;
+
+    const pk = active ? 1 - Math.exp(-d * 2.2) : 1 - Math.exp(-d * 1.6);
+    pitch.current += (pitchTarget - pitch.current) * pk;
+
+    let diff = yawTarget - yaw.current;
+    diff = Math.atan2(Math.sin(diff), Math.cos(diff));
     const yk = active ? 1 - Math.exp(-d * 3.4) : 1 - Math.exp(-d * 2.2);
     yaw.current += diff * yk;
 
     g.rotation.y = yaw.current;
     g.rotation.x = pitch.current;
-
-    g.rotation.z += d * 0.05;
-
-    if (shellRef.current) {
-      shellRef.current.rotation.y += d * 0.18;
-      shellRef.current.rotation.x = Math.sin(t * 0.2) * 0.08;
-      const pulse = 1 + Math.sin(t * 1.1) * 0.025;
-      shellRef.current.scale.setScalar(pulse);
-    }
-
-    if (coreRef.current) {
-      coreRef.current.rotation.y -= d * 0.3;
-      const glow = 1.5 + Math.sin(t * 1.1 + 1) * 0.35;
-      coreRef.current.material.emissiveIntensity = glow;
-    }
   });
 
   return (
-    <group ref={groupRef}>
-      <pointLight position={[0, 0.5, 1.4]} intensity={6} color="#22d3ee" />
-      <pointLight position={[0, -0.6, -1.2]} intensity={3} color="#3b82f6" />
-
-      <group ref={shellRef}>
-        <lineSegments>
-          <edgesGeometry args={[gridGeometry, 0]} />
-          <lineBasicMaterial
-            color="#22d3ee"
-            transparent
-            opacity={0.4}
-            blending={THREE.AdditiveBlending}
-            depthWrite={false}
-          />
-        </lineSegments>
-
-        <lineSegments>
-          <edgesGeometry args={[innerGeometry, 0]} />
-          <lineBasicMaterial
-            color="#7cc0ff"
-            transparent
-            opacity={0.18}
-            blending={THREE.AdditiveBlending}
-            depthWrite={false}
-          />
-        </lineSegments>
-
-        <mesh geometry={glowGeometry}>
-          <meshBasicMaterial
-            color="#22d3ee"
-            transparent
-            opacity={0.1}
-            blending={THREE.AdditiveBlending}
-            depthWrite={false}
-          />
-        </mesh>
-
-        <mesh ref={coreRef}>
-          <sphereGeometry args={[0.12, 20, 20]} />
-          <meshStandardMaterial
-            color="#eaf8ff"
-            emissive="#22d3ee"
-            emissiveIntensity={1.5}
-            metalness={0.3}
-            roughness={0.2}
-          />
-        </mesh>
-      </group>
-    </group>
-  );
-}
-
-function SceneContent() {
-  return (
-    <group>
-      <ambientLight intensity={0.45} />
-      <directionalLight position={[-5, 3, -4]} intensity={1.6} color="#22d3ee" />
-      <HolographicGlobe />
+    <group ref={group}>
+      <ambientLight intensity={0.55} />
+      <directionalLight position={[-5, 3, -4]} intensity={2.2} color="#22d3ee" />
+      <pointLight position={[5, 4, 5]} intensity={70} color="#3b82f6" />
+      <Core />
       <Starfield />
-      <Sparkles
-        count={IS_MOBILE ? 24 : 55}
-        scale={[9, 6, 6]}
-        size={1.5}
-        speed={0.22}
-        color="#7cc0ff"
-        opacity={0.5}
-      />
+      <Sparkles count={IS_MOBILE ? 10 : 30} scale={[10, 7, 8]} size={2.2} speed={0.15} color="#7cc0ff" />
     </group>
   );
 }
