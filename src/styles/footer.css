@@ -19,19 +19,17 @@
   gap: 14px;
 }
 
-.footer__logo {
-  display: flex;
-  align-items: center;
-}
-
-.footer__logo img {
-  display: block;
-}
-
 .footer__name {
   font-family: var(--font-head);
   font-weight: 700;
   font-size: 18px;
+}
+
+.footer__logo-img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 8px;
 }
 
 .footer__year {

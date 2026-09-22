@@ -7,11 +7,16 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <div className="footer__logo">
-            <img src={site.logoUrl || "/logo.png"} alt="" width="30" height="30" aria-hidden="true" />
-          </div>
           <div>
             <p className="footer__name">
+              <img
+                className="footer__logo-img"
+                src={site.logoUrl || "/logo.png"}
+                alt=""
+                width="30"
+                height="30"
+                aria-hidden="true"
+              />
               {event.name} <span className="footer__year">{event.edition}</span>
             </p>
             <p className="footer__organizer muted">{event.organizer}</p>
