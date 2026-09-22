@@ -1,6 +1,5 @@
-import { Component, useEffect, useMemo, useRef, useState } from "react";
+import { Component, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 import "../styles/hero3d.css";
 
@@ -18,6 +17,8 @@ const SCENE_SETTINGS = IS_MOBILE
 const CAMERA_Z = IS_MOBILE ? 11 : 7;
 
 const STAR_COUNT = IS_MOBILE ? 200 : 700;
+const FLOW_PARTICLE_COUNT = IS_MOBILE ? 18 : 36;
+const FLOW_SPEED = 0.045;
 
 function Starfield() {
   const ref = useRef();
@@ -53,6 +54,44 @@ function Starfield() {
     </points>
   );
 }
+
+function FlowParticles() {
+  const ref = useRef();
+  const [positions] = useState(() => {
+    const arr = new Float32Array(FLOW_PARTICLE_COUNT * 3);
+    for (let i = 0; i < FLOW_PARTICLE_COUNT; i += 1) {
+      const angle = (i / FLOW_PARTICLE_COUNT) * Math.PI * 2 + (Math.random() - 0.5) * 0.18;
+      const radius = 3.1 + Math.random() * 2.9;
+      arr[i * 3] = Math.cos(angle) * radius;
+      arr[i * 3 + 1] = Math.sin(angle * 0.5) * 2.4 + (Math.random() - 0.5) * 0.55;
+      arr[i * 3 + 2] = Math.sin(angle) * radius;
+    }
+    return arr;
+  });
+
+  useFrame((_, delta) => {
+    if (REDUCED || !ref.current) return;
+    ref.current.rotation.y += Math.min(delta, 0.05) * FLOW_SPEED;
+  });
+
+  return (
+    <points ref={ref}>
+      <bufferGeometry>
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
+      </bufferGeometry>
+      <pointsMaterial
+        size={0.055}
+        color="#7cc0ff"
+        transparent
+        opacity={0.45}
+        sizeAttenuation
+        depthWrite={false}
+        blending={THREE.AdditiveBlending}
+      />
+    </points>
+  );
+}
+
 
 function Core() {
   const knot = useRef();
@@ -158,7 +197,7 @@ function SceneContent() {
       <pointLight position={[5, 4, 5]} intensity={70} color="#3b82f6" />
       <Core />
       <Starfield />
-      <Sparkles count={IS_MOBILE ? 10 : 30} scale={[10, 7, 8]} size={2.2} speed={0.15} color="#7cc0ff" />
+      <FlowParticles />
     </group>
   );
 }

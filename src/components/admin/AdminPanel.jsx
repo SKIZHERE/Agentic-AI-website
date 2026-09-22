@@ -204,6 +204,9 @@ function LoginForm() {
       <button type="submit" className="ad-btn ad-btn--primary" disabled={busy}>
         {busy ? "Signing in…" : "Sign in"}
       </button>
+      <a href="#home" className="ad-btn ad-btn--ghost">
+        Back to site
+      </a>
     </form>
   );
 }
@@ -275,6 +278,9 @@ function Editor({ user }) {
           <button type="button" className="ad-btn ad-btn--ghost" onClick={() => signOut(auth)}>
             Sign out
           </button>
+          <a href="#home" className="ad-btn ad-btn--ghost">
+            Back to site
+          </a>
         </div>
       </header>
 
