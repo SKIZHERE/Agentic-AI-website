@@ -5,7 +5,7 @@ import "../styles/hero.css";
 const Hero3D = lazy(() => import("./Hero3D"));
 
 export default function Hero({ onRegister }) {
-  const { event, site } = useContent();
+  const { event } = useContent();
   return (
     <header className="hero" id="home">
       <Suspense
@@ -57,7 +57,7 @@ export default function Hero({ onRegister }) {
 
         <div className="hero-cta">
           <button type="button" className="btn btn-primary btn-lg" onClick={onRegister}>
-            Register Now
+            Get Involved
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -77,7 +77,7 @@ export default function Hero({ onRegister }) {
         </div>
 
         <div className="hero-meta muted">
-          {event.details[0].value} · 100% free · {site.register.googleFormLabel} open now
+          {event.date} · {event.venue}
         </div>
       </div>
 

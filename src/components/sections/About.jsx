@@ -11,9 +11,9 @@ export default function About({ id = "about" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
-            overline="About the Hackathon"
+            overline="Jaypee Agentic AI International Summit"
             title={event.about.heading}
-            sub="One weekend. One mission. Agents that act."
+            sub="Intelligent Agents. Real-World Impact."
           />
         </Reveal>
 

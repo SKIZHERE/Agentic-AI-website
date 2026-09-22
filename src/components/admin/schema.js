@@ -8,6 +8,8 @@ export const SECTIONS = [
       name: { label: "Event name", type: "text" },
       edition: { label: "Edition / year", type: "text" },
       tagline: { label: "Tagline", type: "textarea", rows: 2 },
+      date: { label: "Date line", type: "text" },
+      venue: { label: "Venue line", type: "text" },
     },
   },
   {
@@ -53,7 +55,7 @@ export const SECTIONS = [
     },
   },
   {
-    title: "Details cards",
+    title: "Details cards (Key Highlights)",
     path: ["event", "details"],
     kind: "list",
     defaultItem: { icon: "calendar", label: "", value: "" },
@@ -64,7 +66,7 @@ export const SECTIONS = [
     },
   },
   {
-    title: "Tracks",
+    title: "Thematic areas",
     path: ["event", "tracks"],
     kind: "list",
     defaultItem: { icon: "spark", title: "", desc: "" },
@@ -75,7 +77,7 @@ export const SECTIONS = [
     },
   },
   {
-    title: "Timeline",
+    title: "Why Agentic AI? (steps)",
     path: ["event", "timeline"],
     kind: "list",
     defaultItem: { phase: "", title: "", date: "", desc: "" },
@@ -87,7 +89,7 @@ export const SECTIONS = [
     },
   },
   {
-    title: "Prizes",
+    title: "Prizes (currently hidden)",
     path: ["event", "prizes"],
     kind: "list",
     defaultItem: { place: "", amount: "", highlight: false, perks: "" },
@@ -99,12 +101,12 @@ export const SECTIONS = [
     },
   },
   {
-    title: "Rules & eligibility",
+    title: "Who should attend (bullets)",
     path: ["event"],
     kind: "group",
     fields: {
-      rulesTbd: { label: "Rules are still TBD", type: "boolean" },
-      rules: { label: "Rule items", type: "listString" },
+      rulesTbd: { label: "Show 'announced soon' (not used)", type: "boolean" },
+      rules: { label: "Audience items", type: "listString" },
     },
   },
   {
@@ -118,11 +120,11 @@ export const SECTIONS = [
     },
   },
   {
-    title: "Register section",
+    title: "Call to participate",
     path: ["event", "register"],
     kind: "group",
     fields: {
-      note: { label: "Registration note", type: "textarea", rows: 2 },
+      note: { label: "CTA keywords line", type: "textarea", rows: 2 },
     },
   },
   {

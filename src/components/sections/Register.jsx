@@ -12,19 +12,20 @@ export default function Register({ id = "register" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
-            overline="Registration"
-            title="Secure your seat, builder"
+            overline="Call to Participate"
+            title="Be part of the Agentic AI revolution."
             sub={event.register.note}
           />
 
           <div className="register-panel glass">
             <span className="badge register-panel__badge">
               <span className="badge--dot" />
-              Slots filling fast
+              Stay Updated
             </span>
 
             <p className="register-panel__lead">
-              Pick your doorway — both go to the same registration.
+              Details on registration, speakers, programme and participation guidelines will be
+              announced soon — QR Code provided on the poster.
             </p>
 
             <div className="register-panel__actions">
@@ -53,7 +54,7 @@ export default function Register({ id = "register" }) {
             </div>
 
             <p className="register-panel__hint muted">
-              100% free · No login to browse · Google Form & Unstop both accepted
+              JAIIS 2026 · 30–31 October 2026 · JIIT Wish Town Campus, Noida · People · Ideas · Agents · A Better Tomorrow
             </p>
           </div>
         </Reveal>

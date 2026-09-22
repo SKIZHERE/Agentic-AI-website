@@ -1,136 +1,221 @@
 export const event = {
-  badge: "Ongoing Event",
-  name: "Jaypee AI Summit",
+  badge: "International Summit",
+  name: "JAIIS",
   edition: "2026",
-  tagline: "Build autonomous AI agents that think, act, and ship.",
+  tagline: "Intelligent Agents. Real-World Impact.",
   shortDescription:
-    "A 2-day, online + offline hybrid summit by JIIT Noida where builders, developers and AI enthusiasts design autonomous AI agents that solve real-world problems end to end.",
+    "The Jaypee Agentic AI International Summit (JAIIS 2026) brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
+  date: "30 – 31 October 2026",
+  venue: "JIIT Wish Town Campus, Sector-128, Noida, India",
 
   hero: {
-    pre: "Build",
-    highlight: "autonomous AI agents",
-    post: "that think, act & ship.",
+    pre: "Intelligent Agents.",
+    highlight: "Real-World Impact.",
+    post: "",
   },
 
   heroStats: [
-    { num: "24h", label: "Build Sprint" },
-    { num: "₹15L", label: "Prize Pool" },
-    { num: "1–4", label: "Team Size" },
-    { num: "Hybrid", label: "Online + On-site" },
+    { num: "PEOPLE", label: "Researchers · Leaders · Students" },
+    { num: "IDEAS", label: "Keynotes · Research · Innovation" },
+    { num: "AGENTS", label: "Hackathon Builds & Demos" },
+    { num: "IMPACT", label: "A Better Tomorrow" },
   ],
 
   popup: {
-    kicker: "You're invited, builder",
-    title: "Jaypee AI Summit 2026 is LIVE",
-    body: "2 days · 30–31 October at JIIT Noida. Design and ship an autonomous AI agent — win from a &#8377;15,00,000 hackathon prize pool.",
-    primaryLabel: "Register Now",
+    kicker: "Invitation to participate",
+    title: "JAIIS 2026 is coming",
+    body: "The Jaypee <strong>Agentic AI International Summit</strong> brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
+    primaryLabel: "Get Involved",
     secondaryLabel: "Explore More",
-    disclaimer: "Free to participate · Open to all students & developers",
+    disclaimer: "30–31 October 2026 · JIIT Wish Town Campus, Noida · More details soon",
   },
 
   about: {
-    heading: "What is the Jaypee AI Summit?",
+    heading: "Shaping the Future with Agentic AI",
     paragraphs: [
-      "The Jaypee AI Summit is a high-intensity 2-day event hosted by Jaypee Institute of Information Technology (Sector 128, Wish Town Campus, Noida), centered around one idea: software that doesn't wait to be told what to do. Participants design autonomous AI agents that reason over goals, break them into tasks, use tools, and act — end to end, with minimal human steering.",
-      "Over the 2-day summit you will ideate, prototype and demo an agentic system on a real problem statement. Expect mentor check-ins, hands-on workshops and a closing demo day judged by industry leaders from AI startups and research labs.",
-      "No login, no paywall, no gatekeeping. Bring your curiosity and your laptop — everything else is already set up for you.",
+      "The Jaypee Agentic AI International Summit (JAIIS 2026) brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
+      "\u201CFrom intelligent agents to a more capable and inclusive future.\u201D",
+      "EXPLORE · EXCHANGE · COLLABORATE · INNOVATE · CREATE IMPACT",
     ],
   },
 
   details: [
-    { icon: "calendar", label: "Date", value: "30 – 31 October 2026" },
-    { icon: "clock", label: "Format", value: "Hybrid · Online + On-campus" },
-    { icon: "pin", label: "Venue", value: "JIIT, Sector 128, Wish Town Campus, Noida" },
-    { icon: "users", label: "Team Size", value: "1 – 4 members per team" },
+    {
+      icon: "users",
+      label: "International Participation",
+      value: "Connect with global researchers and industry leaders.",
+    },
+    {
+      icon: "spark",
+      label: "Expert Keynotes & Invited Talks",
+      value: "Learn from leading experts in AI and emerging technologies.",
+    },
+    {
+      icon: "brain",
+      label: "Research & Innovation",
+      value: "Explore new ideas, methodologies and real-world applications.",
+    },
+    {
+      icon: "radar",
+      label: "Industry Perspectives",
+      value: "Understand deployment, challenges and opportunities.",
+    },
+    {
+      icon: "chat",
+      label: "Networking & Collaboration",
+      value: "Build partnerships for research, innovation and entrepreneurship.",
+    },
+    {
+      icon: "gift",
+      label: "Agentic AI Hackathon",
+      value: "A platform for students, researchers, developers and startups.",
+    },
   ],
 
   tracks: [
     {
       icon: "spark",
-      title: "Autonomous Workflows",
-      desc: "Agents that plan multi-step workflows and operate tools, APIs and browsers on their own.",
+      title: "Agentic AI & Autonomous Systems",
+      desc: "Self-directing systems that plan and act toward goals with minimal human input.",
     },
     {
-      icon: "brain",
-      title: "Reasoning Engines",
-      desc: "Multi-agent systems that debate, critique and refine outputs before acting.",
+      icon: "users",
+      title: "Multi-Agent Systems",
+      desc: "Teams of agents that cooperate, delegate and negotiate to solve complex problems.",
     },
     {
       icon: "chat",
-      title: "AI Assistants & Copilots",
-      desc: "Context-aware assistants embedded in developer, productivity or creative tooling.",
+      title: "Generative AI & Large Language Models",
+      desc: "Foundation models powering reasoning, tool use and generation at scale.",
     },
     {
       icon: "radar",
-      title: "Open Innovation",
-      desc: "Anything agentic that surprises us — robotics, research, gaming, simulation, health, finance.",
+      title: "AI Agents and Agentic Workflows",
+      desc: "End-to-end agent pipelines that orchestrate tools, APIs and data.",
+    },
+    {
+      icon: "brain",
+      title: "AI for Science & Engineering",
+      desc: "Accelerating discovery, simulation and design across research domains.",
+    },
+    {
+      icon: "check",
+      title: "Intelligent Automation",
+      desc: "Autonomous pipelines that run business and industrial processes.",
+    },
+    {
+      icon: "gift",
+      title: "AI in Healthcare & Education",
+      desc: "Personalised agents for diagnosis, learning and support.",
+    },
+    {
+      icon: "radar",
+      title: "AI for Business & Industry",
+      desc: "Agentic AI applied to operations, finance, marketing and enterprise workflows.",
+    },
+    {
+      icon: "spark",
+      title: "Robotics and Embodied AI",
+      desc: "Agents that perceive, plan and act in the physical world.",
+    },
+    {
+      icon: "check",
+      title: "AI Safety, Ethics & Responsible AI",
+      desc: "Bounding harm, bias and control as agents act independently.",
+    },
+    {
+      icon: "chat",
+      title: "Explainable & Trustworthy AI",
+      desc: "Transparent, verifiable decisions that users can understand and rely on.",
+    },
+    {
+      icon: "radar",
+      title: "Agentic AI for Cybersecurity",
+      desc: "Autonomous defence, threat detection and adaptive response.",
+    },
+    {
+      icon: "spark",
+      title: "AI Agents for Software Engineering",
+      desc: "Coding agents that build, test and maintain software autonomously.",
+    },
+    {
+      icon: "users",
+      title: "Human–AI Collaboration",
+      desc: "Designing agents that augment people in knowledge and creative work.",
+    },
+    {
+      icon: "gift",
+      title: "Emerging Trends in Artificial Intelligence",
+      desc: "Frontier topics, breakthroughs and what comes next in AI.",
     },
   ],
 
   timeline: [
-    { phase: "Phase 01", title: "Ideation", date: "30 Oct · Briefing", desc: "Problem statements revealed. Form teams, pick your track, refine your pitch." },
-    { phase: "Phase 02", title: "Build Sprint", date: "30–31 Oct · 24h", desc: "A full build window. Mentor office hours run every 2 hours across all tracks." },
-    { phase: "Phase 03", title: "Integrate & Test", date: "31 Oct · Morning", desc: "Wire up tools, harden reliability, and prepare your live demos." },
-    { phase: "Phase 04", title: "Demo Day", date: "31 Oct · Afternoon", desc: "Live demos to judges. Winners announced at the closing ceremony." },
+    {
+      phase: "01",
+      title: "Reason & Plan",
+      date: "Goals, decomposed",
+      desc: "Systems understand context, define goals and break them into clear, ordered tasks.",
+    },
+    {
+      phase: "02",
+      title: "Decide & Use Tools",
+      date: "Choices & actions",
+      desc: "Agents evaluate options, use tools, query data and take the best action at every step.",
+    },
+    {
+      phase: "03",
+      title: "Collaborate with Agents",
+      date: "Multi-agent teams",
+      desc: "Multiple agents coordinate, delegate and critique each other to reach shared outcomes.",
+    },
+    {
+      phase: "04",
+      title: "Execute Autonomously",
+      date: "Real-world impact",
+      desc: "With minimal human steering, agents deliver end-to-end outcomes in industry, education, healthcare, science, cybersecurity and robotics.",
+    },
   ],
 
-  prizes: [
-    { place: "1st Place", amount: "₹7,00,000", highlight: true, perks: "Cash prize + incubation offer + direct interview pipeline" },
-    { place: "2nd Place", amount: "₹5,00,000", highlight: false, perks: "Cash prize + cloud credits + interview pipeline" },
-    { place: "3rd Place", amount: "₹3,00,000", highlight: false, perks: "Cash prize + swag kits + fast-track interviews" },
-  ],
+  prizes: [],
 
-  rulesTbd: true,
+  rulesTbd: false,
   rules: [
-    "Detailed rules, eligibility and scoring criteria are yet to be decided and will be announced here and over email shortly after registrations open. Expected format: teams of 1–4, a fixed build window, live demos, and a fair judged close.",
+    "Researchers & Academicians",
+    "Industry Professionals",
+    "AI/ML Developers",
+    "Entrepreneurs & Startups",
+    "Students & Innovators",
+    "Technology Leaders",
+    "Policymakers & AI Enthusiasts",
   ],
 
-  faqs: [
-    {
-      q: "Who can participate?",
-      a: "Anyone — students, working professionals and independent builders. There is no participation fee and no login needed to browse, though you must fill the registration form to compete.",
-    },
-    {
-      q: "Is this purely online or on-site?",
-      a: "It's hybrid. You can participate fully online, or join us on-campus at the Innovation Hub. Both tracks get identical prizes.",
-    },
-    {
-      q: "Do I need prior AI experience?",
-      a: "Not at all. We welcome first-timers — starter kits, models and mentor office hours are built into the event so everyone ships something.",
-    },
-    {
-      q: "How do I register?",
-      a: "Hit the Register Now button and choose either the Google Form or the Unstop event page. Registration closes 24 hours before Kickoff.",
-    },
-    {
-      q: "Do we own what we build?",
-      a: "Yes — 100%. Anything you build stays yours. Some tracks carry optional incubation offers, but ownership always remains with the team.",
-    },
-  ],
+  faqs: [],
 
   register: {
-    note: "Slots are capped per track. Registration closes 24 hours before kickoff — don't snooze.",
+    note: "CONNECT · COLLABORATE · INNOVATE · BUILD THE FUTURE",
   },
 
-  organizer: "Organised by JYC (Jaypee Youth Club)",
+  organizer:
+    "Organised by JIIT, Noida · Jaypee Institute of Information Technology · In Association with RIDE",
 };
 
 export const site = {
-  name: "Agentic AI",
+  name: "JAIIS",
   logoUrl: "/logo.png",
   nav: [
     { label: "About", target: "#about" },
-    { label: "Details", target: "#details" },
-    { label: "Tracks", target: "#tracks" },
-    { label: "Timeline", target: "#timeline" },
-    { label: "Prizes", target: "#prizes" },
-    { label: "FAQ", target: "#faq" },
+    { label: "Highlights", target: "#details" },
+    { label: "Areas", target: "#tracks" },
+    { label: "Why Agentic AI", target: "#timeline" },
+    { label: "Attend", target: "#rules" },
+    { label: "Participate", target: "#register" },
   ],
   register: {
     googleFormUrl: "#",
     unstopUrl: "#",
-    googleFormLabel: "Open Google Form",
-    unstopLabel: "Join on Unstop",
+    googleFormLabel: "Stay Updated",
+    unstopLabel: "Get In Touch",
   },
   social: {
     github: "#",
@@ -139,5 +224,5 @@ export const site = {
     email: "hello@agenticai.events",
   },
   footerNote:
-    "Website built by JYC for the Jaypee AI Summit 2026. No login, no paywall — this page exists purely so you can decide to ship or sit this one out.",
+    "Website built for the Jaypee Agentic AI International Summit (JAIIS 2026). Intelligent Agents. Real-World Impact. PEOPLE | IDEAS | AGENTS | A BETTER TOMORROW.",
 };

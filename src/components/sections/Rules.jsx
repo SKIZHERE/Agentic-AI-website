@@ -12,9 +12,9 @@ export default function Rules({ id = "rules" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
-            overline="Rules & Eligibility"
-            title="Keep it fair, keep it agentic"
-            sub="Detailed rules will be announced soon — we'll update this page and email all registered teams the moment they're final."
+            overline="Who Should Attend?"
+            title="Built for the entire AI ecosystem"
+            sub="Researchers, builders, leaders and curious minds — JAIIS 2026 welcomes everyone shaping the future of Agentic AI."
           />
         </Reveal>
 

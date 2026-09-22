@@ -9,9 +9,7 @@ import About from "./components/sections/About";
 import Details from "./components/sections/Details";
 import Tracks from "./components/sections/Tracks";
 import Timeline from "./components/sections/Timeline";
-import Prizes from "./components/sections/Prizes";
 import Rules from "./components/sections/Rules";
-import FAQ from "./components/sections/FAQ";
 import Register from "./components/sections/Register";
 import Footer from "./components/Footer";
 
@@ -54,9 +52,7 @@ export default function App() {
           <Details />
           <Tracks />
           <Timeline />
-          <Prizes />
           <Rules />
-          <FAQ />
           <Register />
         </main>
         <Footer />

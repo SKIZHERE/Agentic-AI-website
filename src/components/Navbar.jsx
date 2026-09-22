@@ -44,7 +44,7 @@ export default function Navbar({ onRegister }) {
                 onRegister();
               }}
             >
-              Register
+              Get Involved
             </button>
           </li>
         </ul>

@@ -13,9 +13,9 @@ export default function Tracks({ id = "tracks" }) {
         <Reveal>
           <SectionHeading
             align="left"
-            overline="Competition Tracks"
-            title="Pick your lane, build your agent"
-            sub="Four tracks, one rule — your agent must act on its own."
+            overline="Key Thematic Areas"
+            title="Fifteen areas shaping Agentic AI"
+            sub="Dive into the domains where agentic systems are redefining what technology can do."
           />
         </Reveal>
 
@@ -29,7 +29,7 @@ export default function Tracks({ id = "tracks" }) {
                 <h3 className="track-card__title">{t.title}</h3>
                 <p className="track-card__desc muted">{t.desc}</p>
                 <span className="track-card__tag">
-                  Track {String(i + 1).padStart(2, "0")}
+                  Area {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
             </Reveal>

@@ -12,9 +12,9 @@ export default function Details({ id = "details" }) {
         <Reveal>
           <SectionHeading
             align="left"
-            overline="Event Details"
-            title="When & where the magic happens"
-            sub="Everything you need to plan your weekend around the build."
+            overline="Key Highlights"
+            title="What to expect at JAIIS 2026"
+            sub="Connect, learn, build and collaborate with the agentic AI community."
           />
         </Reveal>
 
