@@ -7,7 +7,6 @@ export const SECTIONS = [
       badge: { label: "Badge", type: "text" },
       name: { label: "Event name", type: "text" },
       edition: { label: "Edition / year", type: "text" },
-      tagline: { label: "Tagline", type: "textarea", rows: 2 },
       date: { label: "Date line", type: "text" },
       venue: { label: "Venue line", type: "text" },
     },
@@ -89,7 +88,7 @@ export const SECTIONS = [
     },
   },
   {
-    title: "Prizes (currently hidden)",
+    title: "Prizes",
     path: ["event", "prizes"],
     kind: "list",
     defaultItem: { place: "", amount: "", highlight: false, perks: "" },

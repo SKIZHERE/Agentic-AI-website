@@ -24,7 +24,7 @@ export default function Footer() {
               {item.label}
             </a>
           ))}
-          <a href="mailto:hello@agenticai.events">{site.social.email}</a>
+          <a href={`mailto:${site.social.email}`}>{site.social.email}</a>
         </div>
 
         <p className="footer__note muted">{site.footerNote}</p>

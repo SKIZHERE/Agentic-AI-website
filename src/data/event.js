@@ -2,9 +2,6 @@ export const event = {
   badge: "International Summit",
   name: "JAIIS",
   edition: "2026",
-  tagline: "Intelligent Agents. Real-World Impact.",
-  shortDescription:
-    "The Jaypee Agentic AI International Summit (JAIIS 2026) brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
   date: "30 – 31 October 2026",
   venue: "JIIT Wish Town Campus, Sector-128, Noida, India",
 
@@ -177,7 +174,11 @@ export const event = {
     },
   ],
 
-  prizes: [],
+  prizes: [
+    { place: "1st Place", amount: "₹7,00,000", highlight: true, perks: "Cash prize + incubation offer + direct interview pipeline" },
+    { place: "2nd Place", amount: "₹5,00,000", highlight: false, perks: "Cash prize + cloud credits + interview pipeline" },
+    { place: "3rd Place", amount: "₹3,00,000", highlight: false, perks: "Cash prize + swag kits + fast-track interviews" },
+  ],
 
   rulesTbd: false,
   rules: [
@@ -190,7 +191,28 @@ export const event = {
     "Policymakers & AI Enthusiasts",
   ],
 
-  faqs: [],
+  faqs: [
+    {
+      q: "Who can participate?",
+      a: "JAIIS 2026 welcomes researchers, academicians, industry professionals, AI/ML developers, entrepreneurs, students, innovators, technology leaders, policymakers and AI enthusiasts from around the world.",
+    },
+    {
+      q: "Is the summit online or on-site?",
+      a: "It is an international summit hosted at JIIT Wish Town Campus, Sector-128, Noida. Exact format and participation model will be announced soon.",
+    },
+    {
+      q: "Do I need prior AI experience?",
+      a: "No — the summit is designed for everyone from first-timers to experts. Details on sessions, tracks and the agentic AI hackathon will be announced soon.",
+    },
+    {
+      q: "How do I register?",
+      a: "Registration links will be published here once they open. Stay updated via the site — announcements will also be shared on the official poster (QR code).",
+    },
+    {
+      q: "What topics will the summit cover?",
+      a: "Agentic AI, autonomous and multi-agent systems, LLMs, agentic workflows, AI for science, healthcare, cybersecurity, robotics, responsible AI and more across fifteen thematic areas.",
+    },
+  ],
 
   register: {
     note: "CONNECT · COLLABORATE · INNOVATE · BUILD THE FUTURE",
