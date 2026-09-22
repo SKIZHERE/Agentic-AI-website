@@ -93,18 +93,24 @@ function FlowParticles() {
 }
 
 
-function Core() {
+function Core({ pointer }) {
   const knot = useRef();
   const shell = useRef();
+  const smoothPointer = useRef({ x: 0, y: 0 });
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     if (REDUCED) {
       knot.current.rotation.y = 0.6;
       return;
     }
+    const d = Math.min(delta, 0.05);
+    const smoothing = 1 - Math.exp(-d * 4);
+    smoothPointer.current.x += (pointer.current.x - smoothPointer.current.x) * smoothing;
+    smoothPointer.current.y += (pointer.current.y - smoothPointer.current.y) * smoothing;
+
     const t = state.clock.elapsedTime;
-    knot.current.rotation.y = t * 0.35 + state.pointer.x * 0.55;
-    knot.current.rotation.x = Math.sin(t * 0.2) * 0.18 + state.pointer.y * 0.28;
+    knot.current.rotation.y = t * 0.35 + smoothPointer.current.x * 0.35;
+    knot.current.rotation.x = Math.sin(t * 0.2) * 0.18 + smoothPointer.current.y * 0.18;
     shell.current.rotation.y = -t * 0.14;
     shell.current.rotation.z = t * 0.07;
   });
@@ -195,7 +201,7 @@ function SceneContent() {
       <ambientLight intensity={0.55} />
       <directionalLight position={[-5, 3, -4]} intensity={2.2} color="#22d3ee" />
       <pointLight position={[5, 4, 5]} intensity={70} color="#3b82f6" />
-      <Core />
+      <Core pointer={pointer} />
       <Starfield />
       <FlowParticles />
     </group>
