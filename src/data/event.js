@@ -22,7 +22,7 @@ export const event = {
     kicker: "Invitation to participate",
     title: "JAAIS 2026 is coming",
     body: "The Jaypee <strong>Agentic AI International Summit</strong> brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
-    primaryLabel: "Get Involved",
+    primaryLabel: "Participate",
     secondaryLabel: "Explore More",
     disclaimer: "30–31 October 2026 · JIIT Wish Town Campus, Noida · More details soon",
   },
@@ -231,7 +231,6 @@ export const site = {
     { label: "Areas", target: "#tracks" },
     { label: "Why Agentic AI", target: "#timeline" },
     { label: "Attend", target: "#rules" },
-    { label: "Participate", target: "#register" },
   ],
   register: {
     googleFormUrl: "#",

@@ -11,6 +11,7 @@ export default function Navbar({ onRegister }) {
   const linksRef = useRef(null);
   const linkRefs = useRef(new Map());
   const { event, site } = useContent();
+  const navItems = site.nav.filter((item) => item.target !== "#register");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -24,7 +25,7 @@ export default function Navbar({ onRegister }) {
       const position = window.scrollY + window.innerHeight * 0.35;
       let currentTarget = null;
 
-      site.nav.forEach((item) => {
+      navItems.forEach((item) => {
         const section = document.querySelector(item.target);
         if (section && section.getBoundingClientRect().top + window.scrollY <= position) {
           currentTarget = item.target;
@@ -41,7 +42,7 @@ export default function Navbar({ onRegister }) {
       window.removeEventListener("scroll", updateActiveTarget);
       window.removeEventListener("resize", updateActiveTarget);
     };
-  }, [site.nav]);
+  }, [navItems]);
 
   useLayoutEffect(() => {
     const updateIndicator = () => {
@@ -127,7 +128,7 @@ export default function Navbar({ onRegister }) {
                 : undefined
             }
           />
-          {site.nav.map((item) => (
+          {navItems.map((item) => (
             <li key={item.target}>
               <a
                 href={item.target}
@@ -157,7 +158,7 @@ export default function Navbar({ onRegister }) {
                 onRegister();
               }}
             >
-              Get Involved
+              Participate
             </button>
           </li>
         </ul>
