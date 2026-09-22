@@ -1,33 +1,33 @@
 export const event = {
   badge: "Ongoing Event",
-  name: "Agentic AI Hackathon",
+  name: "Jaypee AI Summit",
   edition: "2026",
   tagline: "Build autonomous AI agents that think, act, and ship.",
   shortDescription:
-    "A 48-hour, online + offline hybrid hackathon where builders, developers and AI enthusiasts design autonomous AI agents that solve real-world problems end to end.",
+    "A 2-day, online + offline hybrid summit by JIIT Noida where builders, developers and AI enthusiasts design autonomous AI agents that solve real-world problems end to end.",
 
   popup: {
     kicker: "You're invited, builder",
-    title: "Agentic AI Hackathon 2026 is LIVE",
-    body: "48 hours. One goal: agents that think, plan and act on their own. Team up, ship, and win from a &#8377;5,00,000 prize pool.",
+    title: "Jaypee AI Summit 2026 is LIVE",
+    body: "2 days · 30–31 October at JIIT Noida. Design and ship an autonomous AI agent — win from a &#8377;15,00,000 hackathon prize pool.",
     primaryLabel: "Register Now",
     secondaryLabel: "Explore More",
     disclaimer: "Free to participate · Open to all students & developers",
   },
 
   about: {
-    heading: "What is the Agentic AI Hackathon?",
+    heading: "What is the Jaypee AI Summit?",
     paragraphs: [
-      "The Agentic AI Hackathon is a high-intensity build sprint centered around one idea: software that doesn't wait to be told what to do. Participants design autonomous AI agents that reason over goals, break them into tasks, use tools, and act — end to end, with minimal human steering.",
-      "Over 48 hours you will ideate, prototype and demo an agentic system on a real problem statement. Expect mentor check-ins, hands-on workshops and a closing demo day judged by industry leaders from AI startups and research labs.",
+      "The Jaypee AI Summit is a high-intensity 2-day event hosted by Jaypee Institute of Information Technology (Sector 128, Wish Town Campus, Noida), centered around one idea: software that doesn't wait to be told what to do. Participants design autonomous AI agents that reason over goals, break them into tasks, use tools, and act — end to end, with minimal human steering.",
+      "Over the 2-day summit you will ideate, prototype and demo an agentic system on a real problem statement. Expect mentor check-ins, hands-on workshops and a closing demo day judged by industry leaders from AI startups and research labs.",
       "No login, no paywall, no gatekeeping. Bring your curiosity and your laptop — everything else is already set up for you.",
     ],
   },
 
   details: [
-    { icon: "calendar", label: "Date", value: "24 – 26 October 2026" },
+    { icon: "calendar", label: "Date", value: "30 – 31 October 2026" },
     { icon: "clock", label: "Format", value: "Hybrid · Online + On-campus" },
-    { icon: "pin", label: "Venue", value: "Innovation Hub, Tech Park Block C" },
+    { icon: "pin", label: "Venue", value: "JIIT, Sector 128, Wish Town Campus, Noida" },
     { icon: "users", label: "Team Size", value: "1 – 4 members per team" },
   ],
 
@@ -55,25 +55,21 @@ export const event = {
   ],
 
   timeline: [
-    { phase: "Phase 01", title: "Ideation", date: "Day 0 · Briefing", desc: "Problem statements revealed. Form teams, pick your track, refine your pitch." },
-    { phase: "Phase 02", title: "Build Sprint", date: "Day 1 · 24h", desc: "24 hours of pure build. Mentor office hours run every 2 hours across all tracks." },
-    { phase: "Phase 03", title: "Integrate & Test", date: "Day 2 · Morning", desc: "Wire up tools, harden reliability, and prepare your live demos." },
-    { phase: "Phase 04", title: "Demo Day", date: "Day 2 · Afternoon", desc: "Live demos to judges. Winners announced at the closing ceremony." },
+    { phase: "Phase 01", title: "Ideation", date: "30 Oct · Briefing", desc: "Problem statements revealed. Form teams, pick your track, refine your pitch." },
+    { phase: "Phase 02", title: "Build Sprint", date: "30–31 Oct · 24h", desc: "A full build window. Mentor office hours run every 2 hours across all tracks." },
+    { phase: "Phase 03", title: "Integrate & Test", date: "31 Oct · Morning", desc: "Wire up tools, harden reliability, and prepare your live demos." },
+    { phase: "Phase 04", title: "Demo Day", date: "31 Oct · Afternoon", desc: "Live demos to judges. Winners announced at the closing ceremony." },
   ],
 
   prizes: [
-    { place: "1st Place", amount: "₹2,50,000", highlight: true, perks: "Cash prize + incubation offer + direct interview pipeline" },
-    { place: "2nd Place", amount: "₹1,50,000", highlight: false, perks: "Cash prize + cloud credits + interview pipeline" },
-    { place: "3rd Place", amount: "₹1,00,000", highlight: false, perks: "Cash prize + swag kits + fast-track interviews" },
+    { place: "1st Place", amount: "₹7,00,000", highlight: true, perks: "Cash prize + incubation offer + direct interview pipeline" },
+    { place: "2nd Place", amount: "₹5,00,000", highlight: false, perks: "Cash prize + cloud credits + interview pipeline" },
+    { place: "3rd Place", amount: "₹3,00,000", highlight: false, perks: "Cash prize + swag kits + fast-track interviews" },
   ],
 
+  rulesTbd: true,
   rules: [
-    "Teams of 1–4 members. Solo hackers are welcome; we'll help you find a team at the pre-event mixer.",
-    "Any tech stack is allowed. Your project must demonstrate an autonomous agentic system — no simple chat wrappers.",
-    "All code must be written during the hackathon window. Open-source libraries and APIs are permitted.",
-    "Projects must be demoed live on Demo Day. A short pitch + working walkthrough is mandatory.",
-    "The judging panel's decision is final. Off-script or plagiarised submissions will be disqualified.",
-    "One submission per team. All team members must be present for the demo to qualify for prizes.",
+    "Detailed rules, eligibility and scoring criteria are yet to be decided and will be announced here and over email shortly after registrations open. Expected format: teams of 1–4, a fixed build window, live demos, and a fair judged close.",
   ],
 
   faqs: [
@@ -103,7 +99,7 @@ export const event = {
     note: "Slots are capped per track. Registration closes 24 hours before kickoff — don't snooze.",
   },
 
-  organizer: "Organised by Agentic AI Community",
+  organizer: "Organised by JYC (Jaypee Youth Club)",
 };
 
 export const site = {
@@ -129,5 +125,5 @@ export const site = {
     email: "hello@agenticai.events",
   },
   footerNote:
-    "Made with agents, for agents. No login, no paywall — this page exists purely so you can decide to ship or sit this one out.",
+    "Website built by JYC for the Jaypee AI Summit 2026. No login, no paywall — this page exists purely so you can decide to ship or sit this one out.",
 };

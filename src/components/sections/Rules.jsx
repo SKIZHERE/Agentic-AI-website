@@ -13,16 +13,16 @@ export default function Rules({ id = "rules" }) {
           <SectionHeading
             overline="Rules & Eligibility"
             title="Keep it fair, keep it agentic"
-            sub="Short, sharp rules so the playing field stays level for everyone."
+            sub="Detailed rules will be announced soon — we'll update this page and email all registered teams the moment they're final."
           />
         </Reveal>
 
         <div className="rules-grid">
           {event.rules.map((rule, i) => (
             <Reveal key={i} delay={(i % 2) * 70}>
-              <div className="rule-item">
+              <div className={"rule-item" + (event.rulesTbd ? " rule-item--tbd" : "")}>
                 <span className="rule-item__check">
-                  <Icon name="check" size={16} strokeWidth={2.2} />
+                  <Icon name={event.rulesTbd ? "clock" : "check"} size={16} strokeWidth={2.2} />
                 </span>
                 <p>{rule}</p>
               </div>

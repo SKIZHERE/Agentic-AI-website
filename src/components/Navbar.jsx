@@ -19,16 +19,7 @@ export default function Navbar({ onRegister }) {
       <div className="container navbar__inner">
         <a href="#home" className="navbar__brand" aria-label="Home">
           <span className="navbar__logo" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2l2.1 6.2L20 10l-5.9 1.8L12 18l-2.1-6.2L4 10l5.9-1.8L12 2z" fill="url(#bl)" />
-              <circle cx="18.5" cy="4.5" r="2" fill="url(#bl)" />
-              <defs>
-                <linearGradient id="bl" x1="4" y1="2" x2="20" y2="18">
-                  <stop stopColor="#3b82f6" />
-                  <stop offset="1" stopColor="#22d3ee" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="/logo.png" alt="" width="28" height="28" />
           </span>
           <span className="navbar__name">
             {event.name} <sup className="navbar__year">{event.edition}</sup>

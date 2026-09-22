@@ -300,6 +300,21 @@
   box-shadow: 0 0 18px -4px rgba(59, 130, 246, 0.6);
 }
 
+.rule-item--tbd {
+  grid-column: 1 / -1;
+  border-style: dashed;
+  justify-content: center;
+}
+
+.rule-item--tbd p {
+  max-width: 720px;
+}
+
+.rule-item--tbd .rule-item__check {
+  color: var(--cyan-bright);
+  box-shadow: 0 0 18px -4px rgba(34, 211, 238, 0.6);
+}
+
 /* ---------- FAQ ---------- */
 .faq-list {
   max-width: 780px;

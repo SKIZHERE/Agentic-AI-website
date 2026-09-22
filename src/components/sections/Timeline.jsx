@@ -11,7 +11,7 @@ export default function Timeline({ id = "timeline" }) {
           <SectionHeading
             align="left"
             overline="Roadmap"
-            title="The 48-hour journey"
+            title="The 24-hour build sprint"
             sub="A rough arc — burnouts optional, shipping agents not."
           />
         </Reveal>

@@ -68,11 +68,11 @@ export default function Hero({ onRegister }) {
 
         <div className="hero-stats">
           <div className="hero-stat">
-            <span className="hero-stat__num">48h</span>
+            <span className="hero-stat__num">24h</span>
             <span className="hero-stat__label">Build Sprint</span>
           </div>
           <div className="hero-stat">
-            <span className="hero-stat__num">₹5L</span>
+            <span className="hero-stat__num">₹15L</span>
             <span className="hero-stat__label">Prize Pool</span>
           </div>
           <div className="hero-stat">

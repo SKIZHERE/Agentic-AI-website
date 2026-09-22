@@ -20,13 +20,12 @@
 }
 
 .footer__logo {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  border-radius: 13px;
-  background: var(--grad-dim);
-  border: 1px solid var(--line-strong);
+  display: flex;
+  align-items: center;
+}
+
+.footer__logo img {
+  display: block;
 }
 
 .footer__name {
