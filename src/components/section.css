@@ -127,6 +127,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-self: stretch;
+  padding-top: 28px;
 }
 
 .timeline-item__node {
@@ -269,6 +271,12 @@
   gap: 16px;
   max-width: 900px;
   margin-inline: auto;
+}
+
+.rules-grid > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 8px);
 }
 
 .rule-item {
@@ -484,12 +492,12 @@
     padding: 76px 0;
   }
 
-  .about-grid,
-  .details-grid,
-  .tracks-grid,
-  .rules-grid,
-  .prizes-grid {
+  .rules-grid {
     grid-template-columns: 1fr;
+  }
+
+  .rules-grid > :last-child:nth-child(odd) {
+    width: 100%;
   }
 
   .prize-card--gold {

@@ -77,9 +77,9 @@ export default function Hero({ onRegister }) {
         </div>
 
         <div className="hero-meta muted">
-          {event.date}
+          <span className="hero-meta__date">{event.date}</span>
           <br />
-          {event.venue}
+          <span className="hero-meta__venue">{event.venue}</span>
         </div>
       </div>
 

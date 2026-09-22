@@ -126,6 +126,18 @@
   font-family: var(--font-mono);
 }
 
+.hero-meta__date {
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero-meta__venue {
+  display: block;
+}
+
 .hero3d,
 .hero3d--pending {
   position: absolute;
