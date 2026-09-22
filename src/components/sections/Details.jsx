@@ -1,10 +1,11 @@
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
 import Icon from "../ui/Icon";
-import { event } from "../../data/event";
+import { useContent } from "../../context/content";
 import "../section.css";
 
 export default function Details({ id = "details" }) {
+  const { event } = useContent();
   return (
     <section className="section details" id={id}>
       <div className="container">

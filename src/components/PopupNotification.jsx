@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
-import { event } from "../data/event";
+import { useContent } from "../context/content";
 import "../styles/popup.css";
 
 export default function PopupNotification({ open, onClose, onRegister, onExplore }) {
   const closeRef = useRef(null);
+  const { event } = useContent();
 
   useEffect(() => {
     if (!open) return;

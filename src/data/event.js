@@ -6,6 +6,19 @@ export const event = {
   shortDescription:
     "A 2-day, online + offline hybrid summit by JIIT Noida where builders, developers and AI enthusiasts design autonomous AI agents that solve real-world problems end to end.",
 
+  hero: {
+    pre: "Build",
+    highlight: "autonomous AI agents",
+    post: "that think, act & ship.",
+  },
+
+  heroStats: [
+    { num: "24h", label: "Build Sprint" },
+    { num: "₹15L", label: "Prize Pool" },
+    { num: "1–4", label: "Team Size" },
+    { num: "Hybrid", label: "Online + On-site" },
+  ],
+
   popup: {
     kicker: "You're invited, builder",
     title: "Jaypee AI Summit 2026 is LIVE",
@@ -104,6 +117,7 @@ export const event = {
 
 export const site = {
   name: "Agentic AI",
+  logoUrl: "/logo.png",
   nav: [
     { label: "About", target: "#about" },
     { label: "Details", target: "#details" },

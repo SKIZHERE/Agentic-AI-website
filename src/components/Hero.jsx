@@ -1,10 +1,11 @@
 import { lazy, Suspense } from "react";
-import { event, site } from "../data/event";
+import { useContent } from "../context/content";
 import "../styles/hero.css";
 
 const Hero3D = lazy(() => import("./Hero3D"));
 
 export default function Hero({ onRegister }) {
+  const { event, site } = useContent();
   return (
     <header className="hero" id="home">
       <Suspense
@@ -27,9 +28,9 @@ export default function Hero({ onRegister }) {
         </span>
 
         <h1 className="hero-title">
-          Build{" "}
+          {event.hero.pre}{" "}
           <span className="hero-word">
-              <span className="text-gradient">autonomous AI agents</span>
+              <span className="text-gradient">{event.hero.highlight}</span>
             <svg
               className="hero-underline"
               viewBox="0 0 220 14"
@@ -51,7 +52,7 @@ export default function Hero({ onRegister }) {
               </defs>
             </svg>
           </span>{" "}
-          that think, act &amp; ship.
+          {event.hero.post}
         </h1>
 
         <div className="hero-cta">
@@ -67,22 +68,12 @@ export default function Hero({ onRegister }) {
         </div>
 
         <div className="hero-stats">
-          <div className="hero-stat">
-            <span className="hero-stat__num">24h</span>
-            <span className="hero-stat__label">Build Sprint</span>
-          </div>
-          <div className="hero-stat">
-            <span className="hero-stat__num">₹15L</span>
-            <span className="hero-stat__label">Prize Pool</span>
-          </div>
-          <div className="hero-stat">
-            <span className="hero-stat__num">1–4</span>
-            <span className="hero-stat__label">Team Size</span>
-          </div>
-          <div className="hero-stat">
-            <span className="hero-stat__num">Hybrid</span>
-            <span className="hero-stat__label">Online + On-site</span>
-          </div>
+          {event.heroStats.map((stat, i) => (
+            <div className="hero-stat" key={i}>
+              <span className="hero-stat__num">{stat.num}</span>
+              <span className="hero-stat__label">{stat.label}</span>
+            </div>
+          ))}
         </div>
 
         <div className="hero-meta muted">

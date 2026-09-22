@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
-import { event } from "../../data/event";
+import { useContent } from "../../context/content";
 import "../section.css";
 
 function FaqItem({ faq, i }) {
@@ -28,6 +28,7 @@ function FaqItem({ faq, i }) {
 }
 
 export default function FAQ({ id = "faq" }) {
+  const { event } = useContent();
   return (
     <section className="section faq" id={id}>
       <div className="container">

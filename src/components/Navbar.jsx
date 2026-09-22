@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { event, site } from "../data/event";
+import { useContent } from "../context/content";
 import ThemeToggle from "./ThemeToggle";
 import "../styles/navbar.css";
 
 export default function Navbar({ onRegister }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { event, site } = useContent();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -19,7 +20,7 @@ export default function Navbar({ onRegister }) {
       <div className="container navbar__inner">
         <a href="#home" className="navbar__brand" aria-label="Home">
           <span className="navbar__logo" aria-hidden="true">
-            <img src="/logo.png" alt="" width="28" height="28" />
+            <img src={site.logoUrl || "/logo.png"} alt="" width="28" height="28" />
           </span>
           <span className="navbar__name">
             {event.name} <sup className="navbar__year">{event.edition}</sup>

@@ -1,10 +1,11 @@
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
 import Icon from "../ui/Icon";
-import { event } from "../../data/event";
+import { useContent } from "../../context/content";
 import "../section.css";
 
 export default function Prizes({ id = "prizes" }) {
+  const { event } = useContent();
   return (
     <section className="section prizes" id={id}>
       <div className="prize-orb prize-orb--a" aria-hidden="true" />

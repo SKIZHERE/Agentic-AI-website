@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import { ContentProvider } from "./context/ContentProvider";
+import AdminPanel from "./components/admin/AdminPanel";
 import ParticleField from "./components/ParticleField";
 import PopupNotification from "./components/PopupNotification";
 import Navbar from "./components/Navbar";
@@ -36,7 +38,7 @@ export default function App() {
   const handleExplore = useCallback(() => closeAndScroll("#about"), [closeAndScroll]);
 
   return (
-    <>
+    <ContentProvider>
       <PopupNotification
         open={noticeOpen}
         onClose={dismissNotice}
@@ -59,7 +61,8 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <AdminPanel />
       <div className="noise-overlay" aria-hidden="true" />
-    </>
+    </ContentProvider>
   );
 }

@@ -1,13 +1,14 @@
-import { event, site } from "../data/event";
+import { useContent } from "../context/content";
 import "../styles/footer.css";
 
 export default function Footer() {
+  const { event, site } = useContent();
   return (
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
           <div className="footer__logo">
-            <img src="/logo.png" alt="" width="30" height="30" aria-hidden="true" />
+            <img src={site.logoUrl || "/logo.png"} alt="" width="30" height="30" aria-hidden="true" />
           </div>
           <div>
             <p className="footer__name">
@@ -31,6 +32,10 @@ export default function Footer() {
         <p className="footer__copy muted">
           © {new Date().getFullYear()} Jaypee AI Summit · Built by JYC · All rights reserved.
         </p>
+
+        <a href="#admin" className="footer__admin muted">
+          Content Admin
+        </a>
       </div>
     </footer>
   );

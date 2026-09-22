@@ -1,9 +1,10 @@
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
-import { event } from "../../data/event";
+import { useContent } from "../../context/content";
 import "../section.css";
 
 export default function Timeline({ id = "timeline" }) {
+  const { event } = useContent();
   return (
     <section className="section timeline" id={id}>
       <div className="container">

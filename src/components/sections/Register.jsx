@@ -1,9 +1,10 @@
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
-import { event, site } from "../../data/event";
+import { useContent } from "../../context/content";
 import "../section.css";
 
 export default function Register({ id = "register" }) {
+  const { event, site } = useContent();
   return (
     <section className="section register" id={id}>
       <div className="register-orb register-orb--a" aria-hidden="true" />

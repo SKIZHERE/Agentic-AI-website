@@ -1,9 +1,10 @@
 import Reveal from "../ui/Reveal";
 import SectionHeading from "../ui/SectionHeading";
-import { event } from "../../data/event";
+import { useContent } from "../../context/content";
 import "../section.css";
 
 export default function About({ id = "about" }) {
+  const { event } = useContent();
   return (
     <section className="section" id={id}>
       <div className="grid-bg" aria-hidden="true" />
