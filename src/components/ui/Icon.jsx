@@ -61,7 +61,7 @@ const paths = {
   trophy: (
     <>
       <path d="M8 5h8v5a4 4 0 0 1-8 0V5z" />
-      <path d="M8 6H5a0 0 0 0 0 0v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3" />
+      <path d="M8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3" />
       <path d="M12 14v3M9 20h6M10 17h4v3h-4z" />
     </>
   ),
