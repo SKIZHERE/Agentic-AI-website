@@ -12,7 +12,7 @@ const IS_MOBILE =
   typeof window !== "undefined" && window.innerWidth <= 760;
 
 const SCENE_SETTINGS = IS_MOBILE
-  ? { pos: [0, 0.3, -2.4], scale: 0.5 }
+  ? { pos: [0, 0.3, -2.4], scale: 0.8 }
   : { pos: [0, 0.1, -0.6], scale: 1.2 };
 
 const CAMERA_Z = IS_MOBILE ? 11 : 7;
@@ -128,7 +128,7 @@ function SceneContent() {
     if (REDUCED) return;
     const g = group.current;
     if (!g) return;
-    
+
     const d = Math.min(delta, 0.05);
     const active = performance.now() - lastActivity.current < STALL_MS;
 

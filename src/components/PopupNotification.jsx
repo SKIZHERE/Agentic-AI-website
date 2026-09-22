@@ -55,6 +55,9 @@ export default function PopupNotification({ open, onClose, onRegister, onExplore
             <span className="popup-event__name">{event.name}</span>
             <span className="popup-event__year">{event.edition}</span>
           </div>
+          <div style={{ fontSize: "0.85rem", opacity: 0.7, marginTop: "8px", fontWeight: 500, letterSpacing: "0.5px", marginBottom: "16px" }}>
+            (JAYPEE AGENTIC AI INTERNATIONAL SUMMIT)
+          </div>
 
           <p
             className="popup-body"

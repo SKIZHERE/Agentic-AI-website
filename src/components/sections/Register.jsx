@@ -54,7 +54,7 @@ export default function Register({ id = "register" }) {
             </div>
 
             <p className="register-panel__hint muted">
-              JAIIS 2026 · 30–31 October 2026 · JIIT Wish Town Campus, Noida · People · Ideas · Agents · A Better Tomorrow
+              JAAIS 2026 · 30–31 October 2026 · JIIT Wish Town Campus, Noida · People · Ideas · Agents · A Better Tomorrow
             </p>
           </div>
         </Reveal>

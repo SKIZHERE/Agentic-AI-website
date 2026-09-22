@@ -13,7 +13,7 @@ export default function Details({ id = "details" }) {
           <SectionHeading
             align="left"
             overline="Key Highlights"
-            title="What to expect at JAIIS 2026"
+            title="What to expect at JAAIS 2026"
             sub="Connect, learn, build and collaborate with the agentic AI community."
           />
         </Reveal>

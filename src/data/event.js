@@ -1,6 +1,6 @@
 export const event = {
   badge: "International Summit",
-  name: "JAIIS",
+  name: "JAAIS",
   edition: "2026",
   date: "30 – 31 October 2026",
   venue: "JIIT Wish Town Campus, Sector-128, Noida, India",
@@ -20,7 +20,7 @@ export const event = {
 
   popup: {
     kicker: "Invitation to participate",
-    title: "JAIIS 2026 is coming",
+    title: "JAAIS 2026 is coming",
     body: "The Jaypee <strong>Agentic AI International Summit</strong> brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
     primaryLabel: "Get Involved",
     secondaryLabel: "Explore More",
@@ -30,7 +30,7 @@ export const event = {
   about: {
     heading: "Shaping the Future with Agentic AI",
     paragraphs: [
-      "The Jaypee Agentic AI International Summit (JAIIS 2026) brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
+      "The Jaypee Agentic AI International Summit (JAAIS 2026) brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",
       "\u201CFrom intelligent agents to a more capable and inclusive future.\u201D",
       "EXPLORE · EXCHANGE · COLLABORATE · INNOVATE · CREATE IMPACT",
     ],
@@ -194,7 +194,7 @@ export const event = {
   faqs: [
     {
       q: "Who can participate?",
-      a: "JAIIS 2026 welcomes researchers, academicians, industry professionals, AI/ML developers, entrepreneurs, students, innovators, technology leaders, policymakers and AI enthusiasts from around the world.",
+      a: "JAAIS 2026 welcomes researchers, academicians, industry professionals, AI/ML developers, entrepreneurs, students, innovators, technology leaders, policymakers and AI enthusiasts from around the world.",
     },
     {
       q: "Is the summit online or on-site?",
@@ -223,7 +223,7 @@ export const event = {
 };
 
 export const site = {
-  name: "JAIIS",
+  name: "JAAIS",
   logoUrl: "/logo.png",
   nav: [
     { label: "About", target: "#about" },
@@ -246,5 +246,5 @@ export const site = {
     email: "hello@agenticai.events",
   },
   footerNote:
-    "Website built for the Jaypee Agentic AI International Summit (JAIIS 2026). Intelligent Agents. Real-World Impact. PEOPLE | IDEAS | AGENTS | A BETTER TOMORROW.",
+    "Website built for the Jaypee Agentic AI International Summit (JAAIS 2026). Intelligent Agents. Real-World Impact. PEOPLE | IDEAS | AGENTS | A BETTER TOMORROW.",
 };
