@@ -18,6 +18,7 @@ export const event = {
   ],
 
   popup: {
+    badge: "JAI - 2026",
     kicker: "Invitation to participate",
     title: "JAI 2026 is coming",
     body: "The Jaypee <strong>Agentic AI International Summit</strong> brings together researchers, academicians, industry leaders, innovators, entrepreneurs, technology experts and students to explore the rapidly evolving landscape of Agentic Artificial Intelligence.",

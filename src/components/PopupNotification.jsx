@@ -44,7 +44,7 @@ export default function PopupNotification({ open, onClose, onRegister, onExplore
           <div className="popup-top">
             <span className="badge">
               <span className="badge--dot" />
-              {event.badge}
+              {event.popup.badge}
             </span>
             <span className="popup-kicker">{event.popup.kicker}</span>
           </div>

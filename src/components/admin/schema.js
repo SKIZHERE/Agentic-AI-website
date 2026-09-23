@@ -36,6 +36,7 @@ export const SECTIONS = [
     path: ["event", "popup"],
     kind: "group",
     fields: {
+      badge: { label: "Badge", type: "text" },
       kicker: { label: "Kicker", type: "text" },
       title: { label: "Title", type: "text" },
       body: { label: "Body (HTML allowed)", type: "textarea", rows: 3 },
