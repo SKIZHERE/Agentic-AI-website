@@ -12,7 +12,6 @@ export default function Tracks({ id = "tracks" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
-            align="left"
             overline="Key Thematic Areas"
             title="Five areas shaping Agentic AI"
             sub="Dive into the domains where agentic systems are redefining what technology can do."

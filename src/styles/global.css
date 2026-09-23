@@ -79,11 +79,16 @@ canvas {
   gap: 10px;
 }
 
-.overline::before {
+.overline::before,
+.overline::after {
   content: "";
   width: 26px;
   height: 1px;
   background: var(--grad);
+}
+
+.overline::after {
+  background: linear-gradient(135deg, var(--blue-bright) 0%, var(--blue) 100%);
 }
 
 .section-title {

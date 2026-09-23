@@ -11,7 +11,6 @@ export default function Details({ id = "details" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
-            align="left"
             overline="Key Highlights"
             title="What to expect at JAI 2026"
             sub="Connect, learn, build and collaborate with the agentic AI community."

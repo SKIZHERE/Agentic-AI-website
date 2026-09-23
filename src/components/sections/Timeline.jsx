@@ -10,7 +10,6 @@ export default function Timeline({ id = "timeline" }) {
       <div className="container">
         <Reveal>
           <SectionHeading
-            align="left"
             overline="Why Agentic AI?"
             title="Intelligence in Action for a Better Tomorrow"
             sub="Agentic AI represents a new paradigm in artificial intelligence where systems can reason, plan, make decisions, use tools, collaborate with other agents and execute tasks autonomously to achieve defined goals — transforming industries, education, healthcare, scientific discovery, cybersecurity, robotics and beyond."

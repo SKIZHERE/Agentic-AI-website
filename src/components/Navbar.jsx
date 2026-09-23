@@ -110,7 +110,7 @@ export default function Navbar({ onRegister }) {
             <img src={site.logoUrl || "/logo.png"} alt="" width="28" height="28" />
           </span>
           <span className="navbar__name">
-            {event.name} <sup className="navbar__year">{event.edition}</sup>
+            Jaypee Agentic AI <sup className="navbar__year">{event.edition}</sup>
           </span>
         </a>
 

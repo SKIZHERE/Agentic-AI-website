@@ -104,7 +104,9 @@
   -webkit-backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2px;
+  text-align: center;
 }
 
 .hero-stat__num {
@@ -112,6 +114,7 @@
   font-size: 24px;
   font-weight: 700;
   color: var(--stat-num);
+  text-align: center;
 }
 
 .hero-stat__label {
@@ -119,6 +122,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
+  text-align: center;
 }
 
 .hero-meta {
@@ -287,6 +291,13 @@
     min-width: 0;
     width: 100%;
     padding: 14px 16px;
+  }
+
+  .hero-stat:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 6px);
+    min-width: 0;
   }
 
   .hero-stat__num {
