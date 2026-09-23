@@ -54,7 +54,7 @@ export default function Register({ id = "register" }) {
             </div>
 
             <p className="register-panel__hint muted">
-              JAAIS 2026 · 30–31 October 2026 · JIIT Wish Town Campus, Noida · People · Ideas · Agents · A Better Tomorrow
+              JAI 2026 · 30–31 October 2026 · Jaypee Institute of Information Technology, Wish Town Campus, Noida · Real Problems · Intelligent Agents · Lasting Impact
             </p>
           </div>
         </Reveal>

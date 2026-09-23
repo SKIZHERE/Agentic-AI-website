@@ -14,7 +14,7 @@ export default function Rules({ id = "rules" }) {
           <SectionHeading
             overline="Who Should Attend?"
             title="Built for the entire AI ecosystem"
-            sub="Researchers, builders, leaders and curious minds — JAAIS 2026 welcomes everyone shaping the future of Agentic AI."
+            sub="Researchers, builders, leaders and curious minds — JAI 2026 welcomes everyone shaping the future of Agentic AI."
           />
         </Reveal>
 

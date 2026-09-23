@@ -14,7 +14,7 @@ export default function Tracks({ id = "tracks" }) {
           <SectionHeading
             align="left"
             overline="Key Thematic Areas"
-            title="Fifteen areas shaping Agentic AI"
+            title="Five areas shaping Agentic AI"
             sub="Dive into the domains where agentic systems are redefining what technology can do."
           />
         </Reveal>

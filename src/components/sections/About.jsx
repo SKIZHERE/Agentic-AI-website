@@ -13,7 +13,7 @@ export default function About({ id = "about" }) {
           <SectionHeading
             overline="Jaypee Agentic AI International Summit"
             title={event.about.heading}
-            sub="Intelligent Agents. Real-World Impact."
+            sub="Real Problems. Intelligent Agents. Lasting Impact."
           />
         </Reveal>
 

@@ -100,6 +100,25 @@ export const SECTIONS = [
     },
   },
   {
+    title: "Innovation & Funding",
+    path: ["event", "funding"],
+    kind: "group",
+    fields: {
+      heading: { label: "Heading", type: "text" },
+      tag: { label: "Tag", type: "text" },
+    },
+  },
+  {
+    title: "Funding pools",
+    path: ["event", "funding", "pools"],
+    kind: "list",
+    defaultItem: { title: "", amount: "" },
+    itemFields: {
+      title: { label: "Title", type: "text" },
+      amount: { label: "Amount", type: "text" },
+    },
+  },
+  {
     title: "Who should attend (bullets)",
     path: ["event"],
     kind: "group",
