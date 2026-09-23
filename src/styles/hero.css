@@ -28,6 +28,7 @@
 
 .hero-badge {
   margin-bottom: 26px;
+  transform: translateY(-38px);
 }
 
 .hero-title {
@@ -192,8 +193,13 @@
 }
 
 @keyframes orb-drift {
-  from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(22px, -28px) scale(1.12); }
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(22px, -28px) scale(1.12);
+  }
 }
 
 .hero-scroll {
@@ -220,9 +226,20 @@
 }
 
 @keyframes scroll-bob {
-  0% { transform: translateY(0); opacity: 1; }
-  70% { transform: translateY(12px); opacity: 0.3; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  70% {
+    transform: translateY(12px);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 560px) {
@@ -251,7 +268,7 @@
     display: none;
   }
 
-  .hero-word > span {
+  .hero-word>span {
     border-bottom: 3px solid var(--blue-bright);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;

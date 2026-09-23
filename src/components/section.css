@@ -274,9 +274,7 @@
 }
 
 .rules-grid > :last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: calc(50% - 8px);
+  grid-column: 1;
 }
 
 .rule-item {
@@ -498,6 +496,7 @@
 
   .rules-grid > :last-child:nth-child(odd) {
     width: 100%;
+    grid-column: 1 / -1;
   }
 
   .prize-card--gold {
