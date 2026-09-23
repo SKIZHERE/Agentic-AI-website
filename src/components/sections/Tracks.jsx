@@ -22,7 +22,7 @@ export default function Tracks({ id = "tracks" }) {
         <div className="tracks-grid">
           {event.tracks.map((t, i) => (
             <Reveal key={t.title} delay={i * 80}>
-              <div className={`card track-card ${i === 2 ? "card--elevated card--round-lg" : ""}`}>
+              <div className="card track-card">
                 <div className="track-card__icon">
                   <Icon name={t.icon} size={24} />
                 </div>

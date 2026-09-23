@@ -20,9 +20,7 @@ export default function About({ id = "about" }) {
         <div className="about-grid">
           {event.about.paragraphs.map((p, i) => (
             <Reveal key={i} delay={i * 90}>
-              <div
-                className={`card about-card ${i === 1 ? "about-card--accent card--round-lg" : ""}`}
-              >
+              <div className="card about-card">
                 <span className="about-card__num">
                   {String(i + 1).padStart(2, "0")}
                 </span>
