@@ -17,7 +17,7 @@ export default function Footer() {
                 height="30"
                 aria-hidden="true"
               />
-              {event.name} <span className="footer__year">{event.edition}</span>
+              Jaypee Agentic AI International Summit <span className="footer__year">{event.edition}</span>
             </p>
             <p className="footer__organizer muted">{event.organizer}</p>
           </div>
